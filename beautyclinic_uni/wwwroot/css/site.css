@@ -529,3 +529,20 @@ footer {
             background: rgba(249,168,212,0.15);
             color: var(--text-main);
         }
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.auth-box {
+    display: flex;
+    gap: 10px;
+}
+
+.btn.small {
+    padding: 6px 14px !important;
+    font-size: 13px !important;
+    border-radius: 999px;
+}
