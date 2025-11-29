@@ -535,6 +535,26 @@ footer {
     align-items: center;
     gap: 20px;
 }
+.SignUpContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    z-index: 5;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.form-card {
+    width: 420px !important;
+    padding: 32px !important;
+    border-radius: 22px;
+}
+
 
 .auth-box {
     display: flex;
