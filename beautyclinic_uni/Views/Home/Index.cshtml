@@ -171,37 +171,44 @@
         <!-- AI consult -->
         <section id="ai-consult" class="wrap">
             <h2>مشاوره هوش مصنوعی</h2>
-            <div class="card glass">
-                <p class="muted section-sub">
-                    در مشاوره هوش مصنوعی، فرم چهره و بینی شما با کمک الگوریتم‌های پیشرفته بررسی می‌شود تا
-                    پیشنهادهای دقیق‌تر و نزدیک‌تر به سلیقه‌تان ارائه شود.
-                </p>
+            <div class="card glass" style="padding:0; overflow:hidden;">
 
-                <div class="grid">
-                    <div class="card glass">
-                        <h3>تحلیل چهره هوشمند</h3>
-                        <p class="muted">
-                            تشخیص فرم صورت، زاویه‌ها و تناسبات چهره با استفاده از مدل‌های یادگیری عمیق.
-                        </p>
-                    </div>
-                    <div class="card glass">
-                        <h3>پیشنهاد طراحی اختصاصی</h3>
-                        <p class="muted">
-                            بر اساس فرم فعلی، سلیقه‌ی شما و استانداردهای زیبایی، طراحی پیشنهادی طبیعی ارائه می‌شود.
-                        </p>
-                    </div>
-                    <div class="card glass">
-                        <h3>شبیه‌سازی پیش از عمل</h3>
-                        <p class="muted">
-                            نمایش تقریبی چهره پس از اصلاح بینی برای تصمیم‌گیری مطمئن‌تر و کاهش نگرانی.
-                        </p>
+                <!-- بخش نمایش پیام‌ها -->
+                <div id="chat-box" style="
+        height:380px;
+        overflow-y:auto;
+        padding:20px;
+        background:rgba(255,255,255,0.45);
+        backdrop-filter:blur(10px);
+    ">
+                    <div style="text-align:center; color:#6b7280; font-size:13px; margin-bottom:10px;">
+                        چت‌بات فعال است؛ پیام خود را بنویسید.
                     </div>
                 </div>
 
-                <div class="btns">
-                    <a class="btn" href="#contact">درخواست مشاوره AI</a>
-                    <a class="btn ghost" href="#gallery">مشاهده نمونه‌ها</a>
+                <!-- ورودی کاربر -->
+                <div style="
+        padding:15px;
+        background:rgba(255,255,255,0.55);
+        backdrop-filter:blur(10px);
+        display:flex;
+        gap:10px;
+    ">
+                    <button class="btn" style="padding:10px 22px;" onclick="sendMessage()">ارسال</button>
+
+                    <input id="msg-input"
+                           type="text"
+                           placeholder="پیام خود را بنویسید..."
+                           style="
+                flex:1;
+                padding:12px;
+                font-size:14px;
+                border-radius:14px;
+                border:1px solid rgba(255,255,255,0.9);
+                background:rgba(255,255,255,0.9);
+            ">
                 </div>
+
             </div>
         </section>
 

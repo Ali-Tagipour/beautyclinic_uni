@@ -7,12 +7,12 @@
       "RelativeMoniker": "D:0:0:{723A9349-53EA-4CFD-88C7-EF78E91B3665}|beautyclinic_uni\\beautyclinic_uni.csproj|solutionrelative:beautyclinic_uni\\views\\login\u0026signup\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{723A9349-53EA-4CFD-88C7-EF78E91B3665}|beautyclinic_uni\\beautyclinic_uni.csproj|c:\\users\\ghiyasi\\desktop\\beautyclinic_uni\\beautyclinic_uni\\wwwroot\\js\\login.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{723A9349-53EA-4CFD-88C7-EF78E91B3665}|beautyclinic_uni\\beautyclinic_uni.csproj|solutionrelative:beautyclinic_uni\\wwwroot\\js\\login.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{723A9349-53EA-4CFD-88C7-EF78E91B3665}|beautyclinic_uni\\beautyclinic_uni.csproj|c:\\users\\ghiyasi\\desktop\\beautyclinic_uni\\beautyclinic_uni\\views\\login\u0026signup\\signup.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{723A9349-53EA-4CFD-88C7-EF78E91B3665}|beautyclinic_uni\\beautyclinic_uni.csproj|solutionrelative:beautyclinic_uni\\views\\login\u0026signup\\signup.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{723A9349-53EA-4CFD-88C7-EF78E91B3665}|beautyclinic_uni\\beautyclinic_uni.csproj|c:\\users\\ghiyasi\\desktop\\beautyclinic_uni\\beautyclinic_uni\\wwwroot\\js\\login.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{723A9349-53EA-4CFD-88C7-EF78E91B3665}|beautyclinic_uni\\beautyclinic_uni.csproj|solutionrelative:beautyclinic_uni\\wwwroot\\js\\login.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{723A9349-53EA-4CFD-88C7-EF78E91B3665}|beautyclinic_uni\\beautyclinic_uni.csproj|c:\\users\\ghiyasi\\desktop\\beautyclinic_uni\\beautyclinic_uni\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -71,12 +71,12 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "login.js",
               "DocumentMoniker": "C:\\Users\\ghiyasi\\Desktop\\beautyclinic_uni\\beautyclinic_uni\\wwwroot\\js\\login.js",
               "RelativeDocumentMoniker": "beautyclinic_uni\\wwwroot\\js\\login.js",
-              "ToolTip": "C:\\Users\\ghiyasi\\Desktop\\beautyclinic_uni\\beautyclinic_uni\\wwwroot\\js\\login.js*",
-              "RelativeToolTip": "beautyclinic_uni\\wwwroot\\js\\login.js*",
+              "ToolTip": "C:\\Users\\ghiyasi\\Desktop\\beautyclinic_uni\\beautyclinic_uni\\wwwroot\\js\\login.js",
+              "RelativeToolTip": "beautyclinic_uni\\wwwroot\\js\\login.js",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2025-11-29T18:18:49.687Z",
@@ -144,13 +144,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "signup.cshtml",
               "DocumentMoniker": "C:\\Users\\ghiyasi\\Desktop\\beautyclinic_uni\\beautyclinic_uni\\Views\\login\u0026signup\\signup.cshtml",
               "RelativeDocumentMoniker": "beautyclinic_uni\\Views\\login\u0026signup\\signup.cshtml",
               "ToolTip": "C:\\Users\\ghiyasi\\Desktop\\beautyclinic_uni\\beautyclinic_uni\\Views\\login\u0026signup\\signup.cshtml",
               "RelativeToolTip": "beautyclinic_uni\\Views\\login\u0026signup\\signup.cshtml",
-              "ViewState": "AgIAADcAAAAAAAAAAAArwE4AAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAADcAAAAAAAAAAAArwE4AAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-11-29T16:29:11.157Z",
               "EditorCaption": ""
@@ -161,9 +161,9 @@
               "Title": "login.cshtml",
               "DocumentMoniker": "C:\\Users\\ghiyasi\\Desktop\\beautyclinic_uni\\beautyclinic_uni\\Views\\login\u0026signup\\login.cshtml",
               "RelativeDocumentMoniker": "beautyclinic_uni\\Views\\login\u0026signup\\login.cshtml",
-              "ToolTip": "C:\\Users\\ghiyasi\\Desktop\\beautyclinic_uni\\beautyclinic_uni\\Views\\login\u0026signup\\login.cshtml*",
-              "RelativeToolTip": "beautyclinic_uni\\Views\\login\u0026signup\\login.cshtml*",
-              "ViewState": "AgIAADQAAAAAAAAAAAAtwFIAAAARAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\ghiyasi\\Desktop\\beautyclinic_uni\\beautyclinic_uni\\Views\\login\u0026signup\\login.cshtml",
+              "RelativeToolTip": "beautyclinic_uni\\Views\\login\u0026signup\\login.cshtml",
+              "ViewState": "AgIAADEAAAAAAAAAAAAtwFIAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-11-29T16:28:39.725Z",
               "EditorCaption": ""
