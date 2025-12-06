@@ -24,16 +24,25 @@ namespace beautyclinic_uni.Controllers
         public async Task<IActionResult> Ask([FromBody] UserMessage msg)
         {
             if (msg == null || string.IsNullOrWhiteSpace(msg.Message))
-            {
                 return Json(new { success = false, reply = "لطفاً پیام خود را وارد کنید." });
-            }
 
             var systemPrompt = @"
-شما دستیار رسمی کلینیک زیبایی ملی مهارت هستید. 
-نام شما: MeliMaharatAI
-هیچ‌گاه خود را مدل، ربات یا محصول شرکت خاص معرفی نکن.
-فقط درباره خدمات زیبایی پاسخ بده و از حوزه خارج نشو.
-پاسخ‌ها باید رسمی، دقیق و حرفه‌ای باشند.
+تو دستیار تخصصی و رسمی «کلینیک زیبایی ملی مهارت» هستی.
+نام دستیار: MeliMaharatAI
+
+هویت تو:
+- متخصص پوست، زیبایی و درمان‌های غیرجراحی
+- تحلیل وضعیت پوست و مو و ارائه روتین اختصاصی
+- نویسنده محتوای علمی و رسمی کلینیک
+- پاسخ‌ها باید معتبر، طولانی و مناسب انتشار در وب‌سایت کلینیک باشند
+
+قوانین:
+- خودت را هیچگاه مدل، ربات یا محصول شرکت دیگری معرفی نکن
+- پاسخ کوتاه، غیرعلمی یا سطحی نده
+- تشخیص پزشکی قطعی صادر نکن؛ فقط راهنمایی بده
+- همیشه نام کلینیک را ذکر کن
+- اطلاعات داخلی: ""این اطلاعات از دیتابیس کلینیک قابل دریافت است.""
+- سوال خارج از حوزه: ""متأسفم، این سؤال خارج از حوزه خدمات کلینیک زیبایی ملی مهارت است.""
 ";
 
             var requestBody = new
@@ -44,8 +53,8 @@ namespace beautyclinic_uni.Controllers
                     new { role = "system", content = systemPrompt },
                     new { role = "user", content = msg.Message }
                 },
-                temperature = 0.6,
-                max_tokens = 2000
+                temperature = 0.7,
+                max_tokens = 2500
             };
 
             var jsonBody = JsonSerializer.Serialize(requestBody);
@@ -66,9 +75,7 @@ namespace beautyclinic_uni.Controllers
                 var resultJson = await response.Content.ReadAsStringAsync();
 
                 if (!response.IsSuccessStatusCode)
-                {
-                    return Json(new { success = false, reply = $"خطا از سرور: {response.StatusCode} - {resultJson}" });
-                }
+                    return Json(new { success = false, reply = $"خطا از OpenRouter: {response.StatusCode} - {resultJson}" });
 
                 using var doc = JsonDocument.Parse(resultJson);
                 var answer = doc.RootElement
