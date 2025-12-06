@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("beautyclinic_uni")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+810356d565d92d78ca86138ec3204fe66a1abc51")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+14568cbd2c834bd1f5c2dd511dda0ee327487b9b")]
 [assembly: System.Reflection.AssemblyProductAttribute("beautyclinic_uni")]
 [assembly: System.Reflection.AssemblyTitleAttribute("beautyclinic_uni")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
