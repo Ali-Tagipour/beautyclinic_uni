@@ -1,10 +1,16 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using beautyclinic_uni.Services;
+using Microsoft.EntityFrameworkCore;
 using YourProjectName.Data; // اسم پروژه خودت رو جایگزین کن
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddHttpClient<AiBeautyService>();
+builder.Services.AddHttpClient();
+builder.Services.AddControllersWithViews();
+
+
 
 // Register DbContext
 builder.Services.AddDbContext<ApplicationDbContext>(options =>

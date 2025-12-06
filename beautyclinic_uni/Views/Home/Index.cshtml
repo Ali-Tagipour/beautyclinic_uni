@@ -10,28 +10,20 @@
 </head>
 
 <body>
-  
     <div class="bg"></div>
-
     <div class="orbs" aria-hidden="true">
         <div class="orb o1"></div>
         <div class="orb o2"></div>
         <div class="orb o3"></div>
     </div>
 
-
     <!-- ناوبری -->
     <header>
         <div class="nav">
-
-            <!-- 🔥 دکمه‌های ورود و ثبت‌نام – قرار می‌گیرند سمت راست لوگو -->
             <div class="auth-box">
-                <a href="/Account/Login" class="btn ghost small">ورود</a><!--backend written in accountcontroller -->
-                <a href="/Account/Signup" class="btn cta-sm small">ثبت‌نام</a> <!--backend written in accountcontroller -->
-
+                <a href="/Account/Login" class="btn ghost small">ورود</a>
+                <a href="/Account/Signup" class="btn cta-sm small">ثبت‌نام</a>
             </div>
-
-            <!-- لوگو (brand) -->
             <a class="brand" href="#home">
                 <span class="logo">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
@@ -41,13 +33,9 @@
                 </span>
                 <span>کلینیک زیبایی ملی مهارت</span>
             </a>
-
-            <!-- منو -->
             <nav>
                 <div class="dropdown">
-
                     <a href="javascript:void(0)">خدمات ▾</a>
-
                     <div class="dropdown-menu">
                         <a href="#doctors">پزشک‌ها</a>
                         <a href="#clinics">کلینیک‌ها</a>
@@ -58,13 +46,9 @@
                 <a href="#ai-consult">مشاوره هوش مصنوعی</a>
                 <a href="#contact" class="btn ghost">رزرو مشاوره</a>
             </nav>
-
-            <!-- رزرو سریع -->
             <a href="#contact" class="btn cta-sm">رزرو سریع</a>
-
         </div>
     </header>
-
 
     <main id="home">
 
@@ -85,9 +69,7 @@
 
             <div class="hero-visual glass">
                 <div class="hero-visual img">
-
-                    <img src="https://s34.picofile.com/file/8488244176/download.png"
-                         alt="نمونه نمای روبرو" loading="lazy">
+                    <img src="https://s34.picofile.com/file/8488244176/download.png" alt="نمونه نمای روبرو" loading="lazy">
                 </div>
                 <div class="badge">+1200 مشاوره موفق</div>
             </div>
@@ -129,7 +111,7 @@
                     <img src="https://satisfied-crab.static.domains/ChatGPT%20Image%20Nov%2022,%202025,%2012_14_19%20AM.png"
                          alt="نمونه نمای روبرو" loading="lazy">
                     <figcaption class="tag">نمای روبرو</figcaption>
-                </figure> 
+                </figure>
                 <figure class="ba glass">
                     <img src="https://satisfied-crab.static.domains/%D9%86%DB%8C%D9%85%D8%B1%D8%AE579.png"
                          alt="نمونه نمای نیم‌رخ" loading="lazy">
@@ -149,21 +131,15 @@
             <div class="card glass">
                 <details>
                     <summary>آیا همه نیاز به عمل بینی دارند؟</summary>
-                    <p class="muted">
-                        خیر؛ در بسیاری از موارد، با اصلاحات جزئی، عادات درست و روش‌های غیرجراحی، می‌توان به نتیجه‌ی رضایت‌بخش رسید.
-                    </p>
+                    <p class="muted">خیر؛ در بسیاری از موارد، با اصلاحات جزئی، عادات درست و روش‌های غیرجراحی، می‌توان به نتیجه‌ی رضایت‌بخش رسید.</p>
                 </details>
                 <details>
                     <summary>نتایج شبیه‌سازی ۱۰۰٪ واقعی است؟</summary>
-                    <p class="muted">
-                        خیر؛ شبیه‌سازی با هوش مصنوعی برای ایجاد دید واقع‌بینانه و کمک به تصمیم‌گیری است، نه تضمین نتیجه قطعی.
-                    </p>
+                    <p class="muted">خیر؛ شبیه‌سازی با هوش مصنوعی برای ایجاد دید واقع‌بینانه و کمک به تصمیم‌گیری است، نه تضمین نتیجه قطعی.</p>
                 </details>
                 <details>
                     <summary>چطور پزشک مناسب انتخاب می‌کنید؟</summary>
-                    <p class="muted">
-                        بر اساس آناتومی شما، سبک دلخواه، نمونه‌کارها و بازخورد مراجعین، چند گزینه‌ی مناسب‌ پیشنهاد می‌شود.
-                    </p>
+                    <p class="muted">بر اساس آناتومی شما، سبک دلخواه، نمونه‌کارها و بازخورد مراجعین، چند گزینه‌ی مناسب‌ پیشنهاد می‌شود.</p>
                 </details>
             </div>
         </section>
@@ -172,43 +148,35 @@
         <section id="ai-consult" class="wrap">
             <h2>مشاوره هوش مصنوعی</h2>
             <div class="card glass" style="padding:0; overflow:hidden;">
-
-                <!-- بخش نمایش پیام‌ها -->
                 <div id="chat-box" style="
-        height:380px;
-        overflow-y:auto;
-        padding:20px;
-        background:rgba(255,255,255,0.45);
-        backdrop-filter:blur(10px);
-    ">
+                    height:380px;
+                    overflow-y:auto;
+                    padding:20px;
+                    background:rgba(255,255,255,0.45);
+                    backdrop-filter:blur(10px);
+                ">
                     <div style="text-align:center; color:#6b7280; font-size:13px; margin-bottom:10px;">
                         چت‌بات فعال است؛ پیام خود را بنویسید.
                     </div>
                 </div>
 
-                <!-- ورودی کاربر -->
                 <div style="
-        padding:15px;
-        background:rgba(255,255,255,0.55);
-        backdrop-filter:blur(10px);
-        display:flex;
-        gap:10px;
-    ">
-                    <button class="btn" style="padding:10px 22px;" onclick="sendMessage()">ارسال</button>
-
-                    <input id="msg-input"
-                           type="text"
-                           placeholder="پیام خود را بنویسید..."
-                           style="
-                flex:1;
-                padding:12px;
-                font-size:14px;
-                border-radius:14px;
-                border:1px solid rgba(255,255,255,0.9);
-                background:rgba(255,255,255,0.9);
-            ">
+                    padding:15px;
+                    background:rgba(255,255,255,0.55);
+                    backdrop-filter:blur(10px);
+                    display:flex;
+                    gap:10px;
+                ">
+                    <input id="msg-input" type="text" placeholder="پیام خود را بنویسید..." style="
+                        flex:1;
+                        padding:12px;
+                        font-size:14px;
+                        border-radius:14px;
+                        border:1px solid rgba(255,255,255,0.9);
+                        background:rgba(255,255,255,0.9);
+                    ">
+                    <button id="send-btn" class="btn" style="padding:10px 22px;">ارسال</button>
                 </div>
-
             </div>
         </section>
 
@@ -224,27 +192,22 @@
                         <label for="name">نام و نام خانوادگی</label>
                         <input id="name" name="name" type="text" placeholder="مثال: نگار رضایی" required>
                     </div>
-
                     <div class="field">
                         <label for="phone">شماره تماس / واتساپ</label>
                         <input id="phone" name="phone" type="tel" placeholder="مثال: 0912..." required>
                     </div>
-
                     <div class="field">
                         <label for="service">نوع خدمت موردنیاز</label>
                         <input id="service" name="service" type="text" placeholder="مشاوره، شبیه‌سازی، همراهی VIP و ...">
                     </div>
-
                     <div class="field">
                         <label for="time">بازه زمانی ترجیحی</label>
                         <input id="time" name="time" type="text" placeholder="این هفته / هفته آینده / تاریخ مشخص">
                     </div>
-
                     <div class="field field-full">
                         <label for="msg">توضیحات تکمیلی</label>
                         <textarea id="msg" name="msg" rows="4" placeholder="اگر دغدغه یا توضیح خاصی دارید اینجا بنویسید..."></textarea>
                     </div>
-
                     <div class="form-actions">
                         <button class="btn" type="submit">ارسال درخواست</button>
                         <a class="btn ghost" href="tel:+989000000000">تماس تلفنی</a>
