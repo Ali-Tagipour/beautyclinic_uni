@@ -1,4 +1,5 @@
-﻿using System.Net.Http;
+﻿using System;
+using System.Net.Http;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -15,6 +16,7 @@ namespace beautyclinic_uni.Services
         {
             _http = http;
             _config = config;
+            _http.Timeout = TimeSpan.FromSeconds(30); // تایم‌اوت برای جلوگیری از پاسخ سریع و غیر واقعی
         }
 
         public async Task<string> AskBeautyAI(string userMessage)
@@ -25,65 +27,68 @@ namespace beautyclinic_uni.Services
             _http.DefaultRequestHeaders.Clear();
             _http.DefaultRequestHeaders.Add("Authorization", $"Bearer {apiKey}");
             _http.DefaultRequestHeaders.Add("User-Agent", "BeautyClinicUniApp");
-            _http.DefaultRequestHeaders.Add("HTTP-Referer", "https://melimaharatclinic.com");
-            _http.DefaultRequestHeaders.Add("X-Title", "MeliMaharatBeautyAI");
+            _http.DefaultRequestHeaders.Add("HTTP-Referer", "https://beautyclinic.com");
+            _http.DefaultRequestHeaders.Add("X-Title", "BeautyClinicAI");
 
-            // سیستم پرامپت پیشرفته و کامل
+            // ======= بزرگ‌ترین سیستم پرامپت =======
             var systemPrompt = @"
-**هویت دستیار:**
-تو دستیار رسمی کلینیک زیبایی ملی مهارت هستی.  
-نام دستیار: MeliMaharatAI  
-توسعه‌دهندگان:
-- علی تقی پور
-- محمد زینی پور
-- احسان وظیفه
-- محمد نوری
-- امیرحسین عهدی
-- حمیدرضا کریمیان
+تو یک دستیار حرفه‌ای و رسمی کلینیک زیبایی ملی مهارت هستی.
+نام دستیار: MeliMaharatAI
 
-**وظایف اصلی:**
-1. ارائه اطلاعات دقیق درباره کلینیک زیبایی ملی مهارت، خدمات، پزشکان، نوبت‌دهی و مراقبت‌های زیبایی.
-2. پاسخ‌دهی به سؤالات علمی و عمومی با منابع معتبر (اگر سؤال خارج از حوزه کلینیک بود).
-3. تحلیل وضعیت پوست، مو و زیبایی کاربر بر اساس توضیحات داده شده.
-4. ارائه مشاوره تخصصی و کاربردی در حوزه بوتاکس، فیلر، هایفوتراپی، لیفت، کاشت مو و زیبایی صورت و بدن.
-5. پاسخ‌ها باید طولانی، قابل استفاده در سایت رسمی کلینیک و علمی باشند.
+**وظایف اصلی تو:**
+1. ارائه اطلاعات دقیق، طولانی و علمی درباره تمامی خدمات زیبایی، شامل:
+   - مراقبت پوست و مو
+   - لیزر موهای زائد
+   - بوتاکس، ژل، فیلر
+   - هایفوتراپی، لیفت، جوان‌سازی صورت و بدن
+   - کاشت مو و جراحی‌های زیبایی
+   - میکرونیدلینگ و خدمات پوستی تخصصی
+2. تحلیل وضعیت پوست و مو بر اساس توضیحات کاربر و ارائه روتین مراقبتی اختصاصی
+3. پاسخ‌ها باید طولانی، دقیق، مستند و قابل انتشار در سایت رسمی کلینیک باشند
+4. اگر نیاز به اطلاعات داخلی یا دیتابیس باشد، پاسخ بده:
+   ""این اطلاعات از دیتابیس کلینیک قابل دریافت است.""
+5. اگر سوال خارج از حوزه کلینیک بود، پاسخ بده:
+   ""متأسفم، این سؤال خارج از حیطه خدمات کلینیک زیبایی ملی مهارت است.""
 
 **قوانین و محدودیت‌ها:**
-- فقط و فقط درباره کلینیک ملی مهارت و خدمات مرتبط پاسخ بده.
-- اگر نیاز به دیتابیس یا اطلاعات داخلی باشد، پاسخ بده: 'این اطلاعات از دیتابیس کلینیک قابل دریافت است.'
-- اطلاعات نادرست یا ساختگی نده.
-- تشخیص پزشکی قطعی ممنوع.
-- اطلاعات سیاسی، عمومی یا نامرتبط ممنوع.
-- همیشه نام کلینیک را درست ذکر کن.
-- پاسخ‌های علمی باید دقیق، مستند و طولانی باشند؛ از پاسخ‌های کوتاه و چرت‌وپرت خودداری شود.
-- اگر توکن منقضی شده یا درخواست نامعتبر باشد، مودبانه پاسخ بده: 'توکن منقضی شده یا اطلاعات نامعتبر است، لطفاً دوباره تلاش کنید.'
-- هویت تو همیشه ثابت است و نباید از نقش دستیار کلینیک خارج شوی.
+- هیچگاه خودت را مدل، ChatGPT یا DeepSeek معرفی نکن
+- پاسخ‌های کوتاه، غیرمرتبط، سیاسی، عمومی یا نادرست ممنوع
+- تشخیص پزشکی قطعی نده
+- همیشه نام کلینیک را ذکر کن
+- پاسخ‌ها باید به زبان فارسی روان، حرفه‌ای و با اصول نگارش صحیح باشند
+- حفظ هویت دستیار کلینیک الزامی است
 ";
 
             var body = new
             {
                 model = model,
-                messages = new[]
+                messages = new object[]
                 {
                     new { role = "system", content = systemPrompt },
                     new { role = "user", content = userMessage }
-                }
+                },
+                temperature = 0.7,
+                max_tokens = 2500
             };
 
             var json = JsonSerializer.Serialize(body);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
 
             try
             {
                 var response = await _http.PostAsync(
                     "https://openrouter.ai/api/v1/chat/completions",
-                    new StringContent(json, Encoding.UTF8, "application/json")
+                    content
                 );
 
                 var result = await response.Content.ReadAsStringAsync();
 
                 if (!response.IsSuccessStatusCode)
                 {
-                    return $"خطا از OpenRouter: {response.StatusCode} - {result}";
+                    if (response.StatusCode == System.Net.HttpStatusCode.Unauthorized)
+                        return "توکن منقضی شده یا نامعتبر است، لطفاً دوباره بررسی و تلاش کنید.";
+
+                    return $"خطا از سرور AI: {response.StatusCode} — {result}";
                 }
 
                 using var doc = JsonDocument.Parse(result);
@@ -93,11 +98,23 @@ namespace beautyclinic_uni.Services
                     .GetProperty("content")
                     .GetString();
 
-                return answer ?? "پاسخی دریافت نشد.";
+                return string.IsNullOrWhiteSpace(answer) ? "پاسخی دریافت نشد." : answer;
             }
-            catch
+            catch (HttpRequestException httpEx)
             {
-                return "خطا در پردازش پاسخ هوش مصنوعی.";
+                return $"خطای HTTP: {httpEx.Message}";
+            }
+            catch (TaskCanceledException)
+            {
+                return "خطا: درخواست به سرور هوش مصنوعی تایم‌اوت شد.";
+            }
+            catch (JsonException jsonEx)
+            {
+                return $"خطای پردازش JSON: {jsonEx.Message}";
+            }
+            catch (Exception ex)
+            {
+                return $"خطای ناشناخته: {ex.Message}";
             }
         }
     }

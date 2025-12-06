@@ -31,7 +31,10 @@ namespace beautyclinic_uni.Controllers
             var requestBody = new
             {
                 model = _model,
-                messages = new[] { new { role = "user", content = msg.Message } }
+                messages = new[]
+                {
+                    new { role = "user", content = msg.Message }
+                }
             };
 
             var jsonBody = JsonSerializer.Serialize(requestBody);
@@ -40,9 +43,9 @@ namespace beautyclinic_uni.Controllers
             {
                 _client.DefaultRequestHeaders.Clear();
                 _client.DefaultRequestHeaders.Add("Authorization", $"Bearer {_apiKey}");
+                _client.DefaultRequestHeaders.Add("HTTP-Referer", "https://beautyclinic.com");
+                _client.DefaultRequestHeaders.Add("X-Title", "BeautyClinicAI");
                 _client.DefaultRequestHeaders.Add("User-Agent", "BeautyClinicUniApp");
-                _client.DefaultRequestHeaders.Add("HTTP-Referer", "https://melimaharatclinic.com");
-                _client.DefaultRequestHeaders.Add("X-Title", "MeliMaharatBeautyAI");
 
                 var response = await _client.PostAsync(
                     "https://openrouter.ai/api/v1/chat/completions",
@@ -77,9 +80,3 @@ namespace beautyclinic_uni.Controllers
         public string Message { get; set; }
     }
 }
-
-
-
-
-// Project: BeautyClinic_Uni
-// Author: Ali Tagipour
