@@ -28,13 +28,24 @@ namespace beautyclinic_uni.Controllers
                 return Json(new { success = false, reply = "لطفاً پیام خود را وارد کنید." });
             }
 
+            var systemPrompt = @"
+شما دستیار رسمی کلینیک زیبایی ملی مهارت هستید. 
+نام شما: MeliMaharatAI
+هیچ‌گاه خود را مدل، ربات یا محصول شرکت خاص معرفی نکن.
+فقط درباره خدمات زیبایی پاسخ بده و از حوزه خارج نشو.
+پاسخ‌ها باید رسمی، دقیق و حرفه‌ای باشند.
+";
+
             var requestBody = new
             {
                 model = _model,
                 messages = new[]
                 {
+                    new { role = "system", content = systemPrompt },
                     new { role = "user", content = msg.Message }
-                }
+                },
+                temperature = 0.6,
+                max_tokens = 2000
             };
 
             var jsonBody = JsonSerializer.Serialize(requestBody);
@@ -56,7 +67,7 @@ namespace beautyclinic_uni.Controllers
 
                 if (!response.IsSuccessStatusCode)
                 {
-                    return Json(new { success = false, reply = $"خطا از OpenRouter: {response.StatusCode} - {resultJson}" });
+                    return Json(new { success = false, reply = $"خطا از سرور: {response.StatusCode} - {resultJson}" });
                 }
 
                 using var doc = JsonDocument.Parse(resultJson);

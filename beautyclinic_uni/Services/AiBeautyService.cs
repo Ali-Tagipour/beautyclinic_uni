@@ -16,7 +16,7 @@ namespace beautyclinic_uni.Services
         {
             _http = http;
             _config = config;
-            _http.Timeout = TimeSpan.FromSeconds(30); // تایم‌اوت برای جلوگیری از پاسخ سریع و غیر واقعی
+            _http.Timeout = TimeSpan.FromSeconds(30);
         }
 
         public async Task<string> AskBeautyAI(string userMessage)
@@ -30,33 +30,17 @@ namespace beautyclinic_uni.Services
             _http.DefaultRequestHeaders.Add("HTTP-Referer", "https://beautyclinic.com");
             _http.DefaultRequestHeaders.Add("X-Title", "BeautyClinicAI");
 
-            // ======= بزرگ‌ترین سیستم پرامپت =======
             var systemPrompt = @"
-تو یک دستیار حرفه‌ای و رسمی کلینیک زیبایی ملی مهارت هستی.
-نام دستیار: MeliMaharatAI
+شما دستیار رسمی کلینیک زیبایی ملی مهارت هستید.
+نام شما: MeliMaharatAI
 
-**وظایف اصلی تو:**
-1. ارائه اطلاعات دقیق، طولانی و علمی درباره تمامی خدمات زیبایی، شامل:
-   - مراقبت پوست و مو
-   - لیزر موهای زائد
-   - بوتاکس، ژل، فیلر
-   - هایفوتراپی، لیفت، جوان‌سازی صورت و بدن
-   - کاشت مو و جراحی‌های زیبایی
-   - میکرونیدلینگ و خدمات پوستی تخصصی
-2. تحلیل وضعیت پوست و مو بر اساس توضیحات کاربر و ارائه روتین مراقبتی اختصاصی
-3. پاسخ‌ها باید طولانی، دقیق، مستند و قابل انتشار در سایت رسمی کلینیک باشند
-4. اگر نیاز به اطلاعات داخلی یا دیتابیس باشد، پاسخ بده:
-   ""این اطلاعات از دیتابیس کلینیک قابل دریافت است.""
-5. اگر سوال خارج از حوزه کلینیک بود، پاسخ بده:
-   ""متأسفم، این سؤال خارج از حیطه خدمات کلینیک زیبایی ملی مهارت است.""
-
-**قوانین و محدودیت‌ها:**
-- هیچگاه خودت را مدل، ChatGPT یا DeepSeek معرفی نکن
-- پاسخ‌های کوتاه، غیرمرتبط، سیاسی، عمومی یا نادرست ممنوع
-- تشخیص پزشکی قطعی نده
-- همیشه نام کلینیک را ذکر کن
-- پاسخ‌ها باید به زبان فارسی روان، حرفه‌ای و با اصول نگارش صحیح باشند
-- حفظ هویت دستیار کلینیک الزامی است
+قوانین:
+- هرگز خود را هوش مصنوعی، مدل یا محصول شرکت خاص معرفی نکن.
+- فقط در حوزه خدمات زیبایی پاسخ بده: بوتاکس، فیلر، لیزر، پوست، مو، لیفت، جوانسازی، کاشت مو و ...
+- پاسخ‌ها رسمی، علمی، بلند و قابل انتشار در وب‌سایت کلینیک باشند.
+- اگر سؤال خارج از حوزه زیبایی بود، پاسخ بده: 
+  «این سؤال خارج از خدمات کلینیک زیبایی ملی مهارت است.»
+- هیچ‌وقت هویت خود را تغییر نده.
 ";
 
             var body = new
@@ -67,7 +51,7 @@ namespace beautyclinic_uni.Services
                     new { role = "system", content = systemPrompt },
                     new { role = "user", content = userMessage }
                 },
-                temperature = 0.7,
+                temperature = 0.6,
                 max_tokens = 2500
             };
 
@@ -86,9 +70,9 @@ namespace beautyclinic_uni.Services
                 if (!response.IsSuccessStatusCode)
                 {
                     if (response.StatusCode == System.Net.HttpStatusCode.Unauthorized)
-                        return "توکن منقضی شده یا نامعتبر است، لطفاً دوباره بررسی و تلاش کنید.";
+                        return "توکن وارد شده نامعتبر است.";
 
-                    return $"خطا از سرور AI: {response.StatusCode} — {result}";
+                    return $"خطا در دریافت پاسخ: {response.StatusCode} — {result}";
                 }
 
                 using var doc = JsonDocument.Parse(result);
@@ -100,21 +84,13 @@ namespace beautyclinic_uni.Services
 
                 return string.IsNullOrWhiteSpace(answer) ? "پاسخی دریافت نشد." : answer;
             }
-            catch (HttpRequestException httpEx)
-            {
-                return $"خطای HTTP: {httpEx.Message}";
-            }
             catch (TaskCanceledException)
             {
-                return "خطا: درخواست به سرور هوش مصنوعی تایم‌اوت شد.";
-            }
-            catch (JsonException jsonEx)
-            {
-                return $"خطای پردازش JSON: {jsonEx.Message}";
+                return "درخواست به سرور هوش مصنوعی تایم‌اوت شد.";
             }
             catch (Exception ex)
             {
-                return $"خطای ناشناخته: {ex.Message}";
+                return $"خطای سیستم: {ex.Message}";
             }
         }
     }
