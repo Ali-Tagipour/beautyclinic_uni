@@ -4040,23 +4040,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\hoyon\\.nuget\\packages\\": {},
-    "E:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\ghiyasi\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\hoyon\\Source\\Repos\\beautyclinic_uni\\beautyclinic_uni\\beautyclinic_uni.csproj",
+      "projectUniqueName": "C:\\Users\\ghiyasi\\Desktop\\beautyclinic_uni\\beautyclinic_uni\\beautyclinic_uni.csproj",
       "projectName": "beautyclinic_uni",
-      "projectPath": "C:\\Users\\hoyon\\Source\\Repos\\beautyclinic_uni\\beautyclinic_uni\\beautyclinic_uni.csproj",
-      "packagesPath": "C:\\Users\\hoyon\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\hoyon\\Source\\Repos\\beautyclinic_uni\\beautyclinic_uni\\obj\\",
+      "projectPath": "C:\\Users\\ghiyasi\\Desktop\\beautyclinic_uni\\beautyclinic_uni\\beautyclinic_uni.csproj",
+      "packagesPath": "C:\\Users\\ghiyasi\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ghiyasi\\Desktop\\beautyclinic_uni\\beautyclinic_uni\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "E:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\hoyon\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ghiyasi\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -4083,7 +4083,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.100"
+      "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
       "net8.0": {
@@ -4123,7 +4123,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
