@@ -1,15 +1,41 @@
-﻿using beautyclinic_uni.Models;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Mvc;
+using beautyclinic_uni.Data;
+using beautyclinic_uni.Models;
 
-namespace beautyclinic_uni.Data
+namespace beautyclinic_uni.Controllers
 {
-    public class ApplicationDbContext : DbContext
+    public class ContactController : Controller
     {
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
-            : base(options)
+        private readonly ApplicationDbContext _context;
+
+        public ContactController(ApplicationDbContext context)
         {
+            _context = context;
         }
 
-        public DbSet<ContactRequest> ContactRequests { get; set; }
+        // GET: Contact/Create
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        // POST: Contact/Create
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(ContactRequest request)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.ContactRequests.Add(request);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("ThankYou");
+            }
+            return View(request);
+        }
+
+        public IActionResult ThankYou()
+        {
+            return View();
+        }
     }
 }
