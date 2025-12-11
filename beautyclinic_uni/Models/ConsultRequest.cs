@@ -1,6 +1,6 @@
 ﻿namespace beautyclinic_uni.Models
 {
-    public class ContactRequest
+    public class ConsultRequest
     {
         public int Id { get; set; }
         public string Fullname { get; set; }

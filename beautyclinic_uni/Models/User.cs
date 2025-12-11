@@ -1,19 +1,15 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace beautyclinic_uni.Models
+﻿namespace beautyclinic_uni.Models
 {
     public class User
     {
-        [Key]
         public int Id { get; set; }
 
-        [Required, MaxLength(100)]
-        public string FullName { get; set; }
+        // این را اضافه می‌کنیم تا ارور رفع شود
+        public string Fullname { get; set; }
 
-        [Required, MaxLength(100)]
+        // اگر خواستی ایمیل هم ذخیره بشه
         public string Email { get; set; }
 
-        [Required, MaxLength(255)]
-        public string PasswordHash { get; set; }
+        public string Phone { get; set; }
     }
 }
