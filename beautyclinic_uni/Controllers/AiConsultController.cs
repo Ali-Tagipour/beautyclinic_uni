@@ -4,6 +4,8 @@ using System.Net.Http;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using beautyclinic_uni.Data;
+using System.Linq;
 
 namespace beautyclinic_uni.Controllers
 {
@@ -12,12 +14,17 @@ namespace beautyclinic_uni.Controllers
         private readonly string _apiKey;
         private readonly string _model;
         private readonly HttpClient _client;
+        private readonly ApplicationDbContext _db;
 
-        public AiConsultController(IConfiguration config, IHttpClientFactory httpClientFactory)
+        public AiConsultController(
+            IConfiguration config,
+            IHttpClientFactory httpClientFactory,
+            ApplicationDbContext db)
         {
             _apiKey = config["AI:ApiKey"];
             _model = config["AI:Model"];
             _client = httpClientFactory.CreateClient();
+            _db = db;
         }
 
         [HttpPost]
@@ -26,7 +33,11 @@ namespace beautyclinic_uni.Controllers
             if (msg == null || string.IsNullOrWhiteSpace(msg.Message))
                 return Json(new { success = false, reply = "لطفاً پیام خود را وارد کنید." });
 
-            var systemPrompt = @"
+            // نمونه: خواندن یک دیتای تستی از دیتابیس
+            // مثلا گرفتن نام اولین کاربر جهت استفاده در پرامپت
+            var userName = _db.Users.FirstOrDefault()?.Name ?? "کاربر";
+
+            var systemPrompt = $@"
 تو دستیار تخصصی و رسمی «کلینیک زیبایی ملی مهارت» هستی.
 نام دستیار: MeliMaharatAI
 
@@ -36,12 +47,14 @@ namespace beautyclinic_uni.Controllers
 - نویسنده محتوای علمی و رسمی کلینیک
 - پاسخ‌ها باید معتبر، طولانی و مناسب انتشار در وب‌سایت کلینیک باشند
 
+اطلاعات پایگاه داده:
+- نام کاربر نمونه دیتابیس: {userName}
+
 قوانین:
-- خودت را هیچگاه مدل، ربات یا محصول شرکت دیگری معرفی نکن
-- پاسخ کوتاه، غیرعلمی یا سطحی نده
-- تشخیص پزشکی قطعی صادر نکن؛ فقط راهنمایی بده
+- خودت را هیچگاه مدل یا ربات شرکت دیگری معرفی نکن
+- پاسخ کوتاه و سطحی نده
+- تشخیص پزشکی قطعی نده
 - همیشه نام کلینیک را ذکر کن
-- اطلاعات داخلی: ""این اطلاعات از دیتابیس کلینیک قابل دریافت است.""
 - سوال خارج از حوزه: ""متأسفم، این سؤال خارج از حوزه خدمات کلینیک زیبایی ملی مهارت است.""
 ";
 
