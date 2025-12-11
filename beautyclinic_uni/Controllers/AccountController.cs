@@ -12,3 +12,5 @@ public class AccountController : Controller
         return View("~/Views/login&signup/signup.cshtml");
     }
 }
+// Project: BeautyClinic_Uni
+// Author: Ali Tagipour

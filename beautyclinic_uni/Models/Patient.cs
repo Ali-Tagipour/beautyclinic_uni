@@ -10,3 +10,5 @@
         public string Details { get; set; }
     }
 }
+// Project: BeautyClinic_Uni
+// Author: Ali Tagipour
