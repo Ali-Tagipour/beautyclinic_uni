@@ -1,0 +1,175 @@
+﻿/* ------ تم اصلی (همان کد ارسال شده توسط شما) ------ */
+
+:root {
+    --radius: 22px;
+    --primary: #a855f7;
+    --primary-600: #8b5cf6;
+    --text: #111827;
+    --text-soft: #6b7280;
+    --glass-bg: rgba(255,255,255,.16);
+    --glass-border: rgba(255,255,255,.45);
+    --shadow: 0 24px 60px rgba(168,85,247,.25);
+    --accent-pink: #f9a8d4;
+    --accent-pink-soft: #ffe4f5;
+    --accent-purple: #c4b5fd;
+    --accent-purple-soft: #e9d5ff;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: "Vazirmatn",Tahoma,Arial,sans-serif;
+}
+
+/* پس‌زمینه گرادینت */
+body {
+    margin: 0;
+    padding: 26px;
+    min-height: 100vh;
+    color: var(--text);
+    background: radial-gradient(600px 400px at 10% 15%, rgba(255,255,255,.55), transparent 60%), radial-gradient(700px 500px at 90% 85%, rgba(168,85,247,.22), transparent 70%), linear-gradient(120deg, #ffffff 0%, #ffd7eb 35%, #f0c8ff 70%, #c7b4ff 100%);
+    background-size: auto, auto, 260% 260%;
+    animation: bg-move 22s ease-in-out infinite alternate, hue-cycle 50s linear infinite;
+    filter: hue-rotate(0deg) saturate(115%);
+    display: flex;
+    justify-content: center;
+}
+
+@keyframes bg-move {
+    0% {
+        background-position: 0% 0%,100% 100%,0% 50%;
+    }
+
+    100% {
+        background-position: 0% 0%,100% 100%,100% 50%;
+    }
+}
+
+@keyframes hue-cycle {
+    to {
+        filter: hue-rotate(360deg) saturate(115%);
+    }
+}
+
+/* کارت اصلی */
+.wrap {
+    width: 100%;
+    max-width: 1100px;
+    padding: 22px;
+    border-radius: var(--radius);
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--shadow);
+}
+
+@supports (backdrop-filter: blur(10px)) {
+    .wrap {
+        backdrop-filter: blur(18px) saturate(160%);
+        background: rgba(255,255,255,.16);
+    }
+}
+
+/* هدر */
+header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 26px;
+    position: relative;
+}
+
+    header h1 {
+        margin: 0;
+        color: #5b21b6;
+        font-size: 26px;
+        font-weight: 700;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+/* دکمه‌های هدر */
+.role-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.role-btn {
+    background: linear-gradient(90deg,var(--primary),var(--primary-600));
+    border: none;
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 14px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 14px;
+    box-shadow: 0 10px 24px rgba(168,85,247,.35);
+}
+
+    .role-btn.secondary {
+        background: linear-gradient(90deg,var(--accent-purple),var(--accent-purple-soft));
+        border: 1px solid #d3c6ff;
+        color: #312e81;
+    }
+
+/* ----------- کارت پزشکان ----------- */
+
+.doctors-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* کارت شیشه‌ای پزشک */
+.doctor-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255,255,255,.35);
+    border: 1px solid rgba(255,255,255,.6);
+    border-radius: var(--radius);
+    padding: 16px 18px;
+    box-shadow: var(--shadow);
+}
+
+    /* عکس پزشک (سمت راست) */
+    .doctor-card img {
+        width: 150px;
+        height: 150px;
+        border-radius: 18px;
+        object-fit: cover;
+        margin-left: 18px;
+        border: 2px solid rgba(255,255,255,.7);
+    }
+
+/* اطلاعات پزشک */
+.doctor-info {
+    flex: 1;
+}
+
+    .doctor-info h2 {
+        margin: 0 0 6px 0;
+        font-size: 20px;
+        font-weight: 700;
+        color: #4c1d95;
+    }
+
+    .doctor-info p {
+        margin: 4px 0;
+        font-size: 14px;
+        color: var(--text-soft);
+    }
+
+/* ریسپانسیو */
+@media(max-width: 768px) {
+    .doctor-card {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+        .doctor-card img {
+            margin: 0 0 14px 0;
+            width: 120px;
+            height: 120px;
+        }
+}
+/* Project: BeautyClinic_Uni -->
+<!-- ehsanghiyasi until 2025/11/12 -->*/

@@ -1,0 +1,59 @@
+﻿const doctors = [
+    {
+        name: "دکتر سارا محمدی",
+        degree: "متخصص پوست و مو - دانشگاه تهران",
+        experience: "۱۰ سال تجربه",
+        specialty: "پوست، زیبایی و لیزر",
+        image: "https://i.pravatar.cc/300?img=47"
+    },
+    {
+        name: "دکتر علی کریمی",
+        degree: "جراح عمومی - دانشگاه شهید بهشتی",
+        experience: "۱۲ سال تجربه",
+        specialty: "جراحی زیبایی و ترمیمی",
+        image: "https://i.pravatar.cc/300?img=15"
+    },
+    {
+        name: "دکتر فاطمه رضایی",
+        degree: "متخصص دندانپزشکی زیبایی - دانشگاه علوم پزشکی ایران",
+        experience: "۸ سال تجربه",
+        specialty: "ایمپلنت و لمینت",
+        image: "https://i.pravatar.cc/300?img=32"
+    },
+    {
+        name: "دکتر حسن سلطانی",
+        degree: "متخصص قلب و عروق - دانشگاه مشهد",
+        experience: "۱۵ سال تجربه",
+        specialty: "تشخیص و درمان بیماری‌های قلبی",
+        image: "https://i.pravatar.cc/300?img=59"
+    },
+    {
+        name: "دکتر نگین آقاجانی",
+        degree: "متخصص زنان و زایمان - دانشگاه شیراز",
+        experience: "۹ سال تجربه",
+        specialty: "زنان، زایمان، نازایی",
+        image: "https://i.pravatar.cc/300?img=48"
+    }
+];
+
+const container = document.getElementById("doctorsContainer");
+
+doctors.forEach(d => {
+    const card = document.createElement("div");
+    card.className = "doctor-card";
+
+    card.innerHTML = `
+        <div class="doctor-info">
+            <h2>${d.name}</h2>
+            <p><strong>مدرک:</strong> ${d.degree}</p>
+            <p><strong>تجربه:</strong> ${d.experience}</p>
+            <p><strong>تخصص:</strong> ${d.specialty}</p>
+        </div>
+
+        <img src="${d.image}" alt="${d.name}">
+    `;
+
+    container.appendChild(card);
+});
+/* Project: BeautyClinic_Uni -->
+<!-- ehsanghiyasi until 2025/11/12 -->*/
