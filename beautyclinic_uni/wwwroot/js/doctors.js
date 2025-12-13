@@ -4,35 +4,36 @@
         degree: "متخصص پوست و مو - دانشگاه تهران",
         experience: "۱۰ سال تجربه",
         specialty: "پوست، زیبایی و لیزر",
-        image: "https://i.pravatar.cc/300?img=47"
+        image: "https://s34.picofile.com/file/8488589318/dr6.png"
+        
     },
     {
         name: "دکتر علی کریمی",
         degree: "جراح عمومی - دانشگاه شهید بهشتی",
         experience: "۱۲ سال تجربه",
         specialty: "جراحی زیبایی و ترمیمی",
-        image: "https://i.pravatar.cc/300?img=15"
+        image: "https://s34.picofile.com/file/8488589268/dr1.png"
     },
     {
         name: "دکتر فاطمه رضایی",
         degree: "متخصص دندانپزشکی زیبایی - دانشگاه علوم پزشکی ایران",
         experience: "۸ سال تجربه",
         specialty: "ایمپلنت و لمینت",
-        image: "https://i.pravatar.cc/300?img=32"
+        image: "https://s34.picofile.com/file/8488589276/dr2.png"
     },
     {
         name: "دکتر حسن سلطانی",
         degree: "متخصص قلب و عروق - دانشگاه مشهد",
         experience: "۱۵ سال تجربه",
         specialty: "تشخیص و درمان بیماری‌های قلبی",
-        image: "https://i.pravatar.cc/300?img=59"
+        image: "https://s34.picofile.com/file/8488589284/dr3.png"
     },
     {
         name: "دکتر نگین آقاجانی",
         degree: "متخصص زنان و زایمان - دانشگاه شیراز",
         experience: "۹ سال تجربه",
         specialty: "زنان، زایمان، نازایی",
-        image: "https://i.pravatar.cc/300?img=48"
+        image: "https://s34.picofile.com/file/8488589292/dr4.png"
     }
 ];
 
