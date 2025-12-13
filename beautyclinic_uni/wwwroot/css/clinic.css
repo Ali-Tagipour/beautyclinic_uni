@@ -1,2 +1,192 @@
-﻿body {
+﻿:root {
+    --radius: 22px;
+    --primary: #a855f7;
+    --primary-600: #8b5cf6;
+    --text: #111827;
+    --text-soft: #6b7280;
+    --glass-bg: rgba(255,255,255,.16);
+    --glass-border: rgba(255,255,255,.45);
+    --shadow: 0 24px 60px rgba(168,85,247,.25);
+    --accent-pink: #f9a8d4;
+    --accent-pink-soft: #ffe4f5;
+    --accent-purple: #c4b5fd;
+    --accent-purple-soft: #e9d5ff;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: "Vazirmatn", Tahoma, Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 26px;
+    min-height: 100vh;
+    color: var(--text);
+    background: radial-gradient(600px 400px at 10% 15%, rgba(255,255,255,.55), transparent 60%), radial-gradient(700px 500px at 90% 85%, rgba(168,85,247,.22), transparent 70%), linear-gradient(120deg, #ffffff 0%, #ffd7eb 35%, #f0c8ff 70%, #c7b4ff 100%);
+    background-size: auto, auto, 260% 260%;
+    animation: bg-move 22s ease-in-out infinite alternate, hue-cycle 50s linear infinite;
+    filter: hue-rotate(0deg) saturate(115%);
+    display: flex;
+    justify-content: center;
+}
+
+@keyframes bg-move {
+    0% {
+        background-position: 0% 0%,100% 100%,0% 50%;
+    }
+
+    100% {
+        background-position: 0% 0%,100% 100%,100% 50%;
+    }
+}
+
+@keyframes hue-cycle {
+    to {
+        filter: hue-rotate(360deg) saturate(115%);
+    }
+}
+
+.wrap, .app {
+    width: 100%;
+    max-width: 1100px;
+    padding: 22px;
+    border-radius: var(--radius);
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--shadow);
+}
+
+@supports (backdrop-filter: blur(10px)) {
+    .wrap, .app {
+        backdrop-filter: blur(18px) saturate(160%);
+        background: rgba(255,255,255,.16);
+    }
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 26px;
+    position: relative;
+}
+
+    header h1 {
+        margin: 0;
+        color: #5b21b6;
+        font-size: 26px;
+        font-weight: 700;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+.home-nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.home-btn {
+    display: inline-block;
+    text-decoration: none;
+    background: linear-gradient(90deg,var(--primary),var(--primary-600));
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 14px;
+    font-weight: 700;
+    font-size: 14px;
+    box-shadow: 0 10px 24px rgba(168,85,247,.25);
+    border: none;
+    cursor: pointer;
+}
+
+    .home-btn:hover {
+        transform: translateY(-2px);
+        transition: transform .18s ease;
+    }
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.card {
+    display: flex;
+    gap: 18px;
+    padding: 16px;
+    border-radius: var(--radius);
+    background: rgba(255,255,255,.35);
+    border: 1px solid rgba(255,255,255,.6);
+    box-shadow: var(--shadow);
+    cursor: pointer;
+    align-items: center;
+}
+
+.card-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 18px;
+    background: var(--accent-purple-soft);
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-soft);
+    font-size: 12px;
+    position: relative;
+}
+
+    .card-img img {
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        display: block;
+    }
+
+.card-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.card-name {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--primary-600);
+}
+
+.card-spec {
+    margin-top: 4px;
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.clinic-info {
+    display: none;
+    margin-top: 10px;
+    padding: 14px;
+    background: var(--accent-pink-soft);
+    border-radius: 16px;
+    font-size: 14px;
+    color: var(--text);
+    line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+    .card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .card-img {
+        margin: auto;
+    }
+
+    header h1 {
+        position: static;
+        transform: none;
+    }
 }
