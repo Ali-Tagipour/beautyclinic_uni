@@ -6,7 +6,7 @@
         address: "تهران، ولیعصر",
         phone: "021-11111111",
         hours: "9 الی 18",
-        img: ""
+        img: "https://s34.picofile.com/file/8488683684/clinic1.png"
     },
     {
         name: "کلینیک سپید",
@@ -15,7 +15,7 @@
         address: "تهران، صادقیه",
         phone: "021-22222222",
         hours: "10 الی 19",
-        img: ""
+        img: "https://s34.picofile.com/file/8488683692/clinic2.png"
     },
     {
         name: "کلینیک قلب ایران",
@@ -24,7 +24,7 @@
         address: "تهران، ونک",
         phone: "021-33333333",
         hours: "8 الی 16",
-        img: ""
+        img: "https://s34.picofile.com/file/8488683700/clinic3.png"
     },
     {
         name: "کلینیک مادر",
@@ -33,7 +33,7 @@
         address: "تهران، تجریش",
         phone: "021-44444444",
         hours: "9 الی 17",
-        img: ""
+        img: "https://s34.picofile.com/file/8488683718/clinic4.png"
     }
 ];
 
