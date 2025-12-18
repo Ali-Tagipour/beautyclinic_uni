@@ -3,16 +3,40 @@
   "WorkspaceRootPath": "C:\\Users\\ghiyasi\\Desktop\\beautyclinic_uni\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{723A9349-53EA-4CFD-88C7-EF78E91B3665}|beautyclinic_uni\\beautyclinic_uni.csproj|c:\\users\\ghiyasi\\desktop\\beautyclinic_uni\\beautyclinic_uni\\wwwroot\\css\\clinic.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{723A9349-53EA-4CFD-88C7-EF78E91B3665}|beautyclinic_uni\\beautyclinic_uni.csproj|solutionrelative:beautyclinic_uni\\wwwroot\\css\\clinic.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{723A9349-53EA-4CFD-88C7-EF78E91B3665}|beautyclinic_uni\\beautyclinic_uni.csproj|c:\\users\\ghiyasi\\desktop\\beautyclinic_uni\\beautyclinic_uni\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{723A9349-53EA-4CFD-88C7-EF78E91B3665}|beautyclinic_uni\\beautyclinic_uni.csproj|solutionrelative:beautyclinic_uni\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{723A9349-53EA-4CFD-88C7-EF78E91B3665}|beautyclinic_uni\\beautyclinic_uni.csproj|c:\\users\\ghiyasi\\desktop\\beautyclinic_uni\\beautyclinic_uni\\wwwroot\\js\\clinic.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{723A9349-53EA-4CFD-88C7-EF78E91B3665}|beautyclinic_uni\\beautyclinic_uni.csproj|solutionrelative:beautyclinic_uni\\wwwroot\\js\\clinic.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{723A9349-53EA-4CFD-88C7-EF78E91B3665}|beautyclinic_uni\\beautyclinic_uni.csproj|c:\\users\\ghiyasi\\desktop\\beautyclinic_uni\\beautyclinic_uni\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{723A9349-53EA-4CFD-88C7-EF78E91B3665}|beautyclinic_uni\\beautyclinic_uni.csproj|solutionrelative:beautyclinic_uni\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{723A9349-53EA-4CFD-88C7-EF78E91B3665}|beautyclinic_uni\\beautyclinic_uni.csproj|c:\\users\\ghiyasi\\desktop\\beautyclinic_uni\\beautyclinic_uni\\views\\clinic\\clinic.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{723A9349-53EA-4CFD-88C7-EF78E91B3665}|beautyclinic_uni\\beautyclinic_uni.csproj|solutionrelative:beautyclinic_uni\\views\\clinic\\clinic.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{723A9349-53EA-4CFD-88C7-EF78E91B3665}|beautyclinic_uni\\beautyclinic_uni.csproj|c:\\users\\ghiyasi\\desktop\\beautyclinic_uni\\beautyclinic_uni\\beautyclinic_uni.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{723A9349-53EA-4CFD-88C7-EF78E91B3665}|beautyclinic_uni\\beautyclinic_uni.csproj|solutionrelative:beautyclinic_uni\\beautyclinic_uni.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{723A9349-53EA-4CFD-88C7-EF78E91B3665}|beautyclinic_uni\\beautyclinic_uni.csproj|c:\\users\\ghiyasi\\desktop\\beautyclinic_uni\\beautyclinic_uni\\wwwroot\\css\\doctors.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{723A9349-53EA-4CFD-88C7-EF78E91B3665}|beautyclinic_uni\\beautyclinic_uni.csproj|solutionrelative:beautyclinic_uni\\wwwroot\\css\\doctors.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{723A9349-53EA-4CFD-88C7-EF78E91B3665}|beautyclinic_uni\\beautyclinic_uni.csproj|c:\\users\\ghiyasi\\desktop\\beautyclinic_uni\\beautyclinic_uni\\wwwroot\\js\\doctors.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{723A9349-53EA-4CFD-88C7-EF78E91B3665}|beautyclinic_uni\\beautyclinic_uni.csproj|solutionrelative:beautyclinic_uni\\wwwroot\\js\\doctors.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{723A9349-53EA-4CFD-88C7-EF78E91B3665}|beautyclinic_uni\\beautyclinic_uni.csproj|c:\\users\\ghiyasi\\desktop\\beautyclinic_uni\\beautyclinic_uni\\views\\doctors\\doctors.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{723A9349-53EA-4CFD-88C7-EF78E91B3665}|beautyclinic_uni\\beautyclinic_uni.csproj|solutionrelative:beautyclinic_uni\\views\\doctors\\doctors.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{723A9349-53EA-4CFD-88C7-EF78E91B3665}|beautyclinic_uni\\beautyclinic_uni.csproj|c:\\users\\ghiyasi\\desktop\\beautyclinic_uni\\beautyclinic_uni\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{723A9349-53EA-4CFD-88C7-EF78E91B3665}|beautyclinic_uni\\beautyclinic_uni.csproj|solutionrelative:beautyclinic_uni\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{723A9349-53EA-4CFD-88C7-EF78E91B3665}|beautyclinic_uni\\beautyclinic_uni.csproj|c:\\users\\ghiyasi\\desktop\\beautyclinic_uni\\beautyclinic_uni\\controllers\\clinicscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -23,24 +47,8 @@
       "RelativeMoniker": "D:0:0:{723A9349-53EA-4CFD-88C7-EF78E91B3665}|beautyclinic_uni\\beautyclinic_uni.csproj|solutionrelative:beautyclinic_uni\\controllers\\doctorscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{723A9349-53EA-4CFD-88C7-EF78E91B3665}|beautyclinic_uni\\beautyclinic_uni.csproj|c:\\users\\ghiyasi\\desktop\\beautyclinic_uni\\beautyclinic_uni\\views\\clinic\\clinic.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{723A9349-53EA-4CFD-88C7-EF78E91B3665}|beautyclinic_uni\\beautyclinic_uni.csproj|solutionrelative:beautyclinic_uni\\views\\clinic\\clinic.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{723A9349-53EA-4CFD-88C7-EF78E91B3665}|beautyclinic_uni\\beautyclinic_uni.csproj|c:\\users\\ghiyasi\\desktop\\beautyclinic_uni\\beautyclinic_uni\\views\\dashboard\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{723A9349-53EA-4CFD-88C7-EF78E91B3665}|beautyclinic_uni\\beautyclinic_uni.csproj|solutionrelative:beautyclinic_uni\\views\\dashboard\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{723A9349-53EA-4CFD-88C7-EF78E91B3665}|beautyclinic_uni\\beautyclinic_uni.csproj|c:\\users\\ghiyasi\\desktop\\beautyclinic_uni\\beautyclinic_uni\\wwwroot\\css\\clinic.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{723A9349-53EA-4CFD-88C7-EF78E91B3665}|beautyclinic_uni\\beautyclinic_uni.csproj|solutionrelative:beautyclinic_uni\\wwwroot\\css\\clinic.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{723A9349-53EA-4CFD-88C7-EF78E91B3665}|beautyclinic_uni\\beautyclinic_uni.csproj|c:\\users\\ghiyasi\\desktop\\beautyclinic_uni\\beautyclinic_uni\\wwwroot\\js\\doctors.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{723A9349-53EA-4CFD-88C7-EF78E91B3665}|beautyclinic_uni\\beautyclinic_uni.csproj|solutionrelative:beautyclinic_uni\\wwwroot\\js\\doctors.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{723A9349-53EA-4CFD-88C7-EF78E91B3665}|beautyclinic_uni\\beautyclinic_uni.csproj|c:\\users\\ghiyasi\\desktop\\beautyclinic_uni\\beautyclinic_uni\\wwwroot\\css\\doctors.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{723A9349-53EA-4CFD-88C7-EF78E91B3665}|beautyclinic_uni\\beautyclinic_uni.csproj|solutionrelative:beautyclinic_uni\\wwwroot\\css\\doctors.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{723A9349-53EA-4CFD-88C7-EF78E91B3665}|beautyclinic_uni\\beautyclinic_uni.csproj|c:\\users\\ghiyasi\\desktop\\beautyclinic_uni\\beautyclinic_uni\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -82,43 +90,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "login.cshtml",
-              "DocumentMoniker": "C:\\Users\\ghiyasi\\Desktop\\beautyclinic_uni\\beautyclinic_uni\\Views\\login\u0026signup\\login.cshtml",
-              "RelativeDocumentMoniker": "beautyclinic_uni\\Views\\login\u0026signup\\login.cshtml",
-              "ToolTip": "C:\\Users\\ghiyasi\\Desktop\\beautyclinic_uni\\beautyclinic_uni\\Views\\login\u0026signup\\login.cshtml",
-              "RelativeToolTip": "beautyclinic_uni\\Views\\login\u0026signup\\login.cshtml",
-              "ViewState": "AgIAACkAAAAAAAAAAAAswEsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-06T19:06:30.827Z"
+              "DocumentIndex": 4,
+              "Title": "beautyclinic_uni",
+              "DocumentMoniker": "C:\\Users\\ghiyasi\\Desktop\\beautyclinic_uni\\beautyclinic_uni\\beautyclinic_uni.csproj",
+              "RelativeDocumentMoniker": "beautyclinic_uni\\beautyclinic_uni.csproj",
+              "ToolTip": "C:\\Users\\ghiyasi\\Desktop\\beautyclinic_uni\\beautyclinic_uni\\beautyclinic_uni.csproj",
+              "RelativeToolTip": "beautyclinic_uni\\beautyclinic_uni.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-12-18T21:55:01.121Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "AccountController.cs",
-              "DocumentMoniker": "C:\\Users\\ghiyasi\\Desktop\\beautyclinic_uni\\beautyclinic_uni\\Controllers\\AccountController.cs",
-              "RelativeDocumentMoniker": "beautyclinic_uni\\Controllers\\AccountController.cs",
-              "ToolTip": "C:\\Users\\ghiyasi\\Desktop\\beautyclinic_uni\\beautyclinic_uni\\Controllers\\AccountController.cs",
-              "RelativeToolTip": "beautyclinic_uni\\Controllers\\AccountController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-06T19:03:06.893Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "dashboard.js",
-              "DocumentMoniker": "C:\\Users\\ghiyasi\\Desktop\\beautyclinic_uni\\beautyclinic_uni\\wwwroot\\js\\dashboard.js",
-              "RelativeDocumentMoniker": "beautyclinic_uni\\wwwroot\\js\\dashboard.js",
-              "ToolTip": "C:\\Users\\ghiyasi\\Desktop\\beautyclinic_uni\\beautyclinic_uni\\wwwroot\\js\\dashboard.js",
-              "RelativeToolTip": "beautyclinic_uni\\wwwroot\\js\\dashboard.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-12-06T17:19:12.054Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "dashboard.css",
               "DocumentMoniker": "C:\\Users\\ghiyasi\\Desktop\\beautyclinic_uni\\beautyclinic_uni\\wwwroot\\css\\dashboard.css",
               "RelativeDocumentMoniker": "beautyclinic_uni\\wwwroot\\css\\dashboard.css",
@@ -130,7 +115,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 11,
               "Title": "dashboard.cshtml",
               "DocumentMoniker": "C:\\Users\\ghiyasi\\Desktop\\beautyclinic_uni\\beautyclinic_uni\\Views\\dashboard\\dashboard.cshtml",
               "RelativeDocumentMoniker": "beautyclinic_uni\\Views\\dashboard\\dashboard.cshtml",
@@ -142,19 +127,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "clinic.cshtml",
               "DocumentMoniker": "C:\\Users\\ghiyasi\\Desktop\\beautyclinic_uni\\beautyclinic_uni\\Views\\clinic\\clinic.cshtml",
               "RelativeDocumentMoniker": "beautyclinic_uni\\Views\\clinic\\clinic.cshtml",
               "ToolTip": "C:\\Users\\ghiyasi\\Desktop\\beautyclinic_uni\\beautyclinic_uni\\Views\\clinic\\clinic.cshtml",
               "RelativeToolTip": "beautyclinic_uni\\Views\\clinic\\clinic.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-13T09:56:57.295Z"
+              "WhenOpened": "2025-12-13T09:56:57.295Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 10,
               "Title": "DoctorsController.cs",
               "DocumentMoniker": "C:\\Users\\ghiyasi\\Desktop\\beautyclinic_uni\\beautyclinic_uni\\Controllers\\DoctorsController.cs",
               "RelativeDocumentMoniker": "beautyclinic_uni\\Controllers\\DoctorsController.cs",
@@ -166,7 +152,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 8,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\ghiyasi\\Desktop\\beautyclinic_uni\\beautyclinic_uni\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "beautyclinic_uni\\Views\\Home\\Index.cshtml",
@@ -179,19 +165,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 7,
               "Title": "doctors.cshtml",
               "DocumentMoniker": "C:\\Users\\ghiyasi\\Desktop\\beautyclinic_uni\\beautyclinic_uni\\Views\\doctors\\doctors.cshtml",
               "RelativeDocumentMoniker": "beautyclinic_uni\\Views\\doctors\\doctors.cshtml",
               "ToolTip": "C:\\Users\\ghiyasi\\Desktop\\beautyclinic_uni\\beautyclinic_uni\\Views\\doctors\\doctors.cshtml",
               "RelativeToolTip": "beautyclinic_uni\\Views\\doctors\\doctors.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-11T18:39:30.946Z"
+              "WhenOpened": "2025-12-11T18:39:30.946Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 9,
               "Title": "ClinicsController.cs",
               "DocumentMoniker": "C:\\Users\\ghiyasi\\Desktop\\beautyclinic_uni\\beautyclinic_uni\\Controllers\\ClinicsController.cs",
               "RelativeDocumentMoniker": "beautyclinic_uni\\Controllers\\ClinicsController.cs",
@@ -203,20 +190,108 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "clinic.js",
               "DocumentMoniker": "C:\\Users\\ghiyasi\\Desktop\\beautyclinic_uni\\beautyclinic_uni\\wwwroot\\js\\clinic.js",
               "RelativeDocumentMoniker": "beautyclinic_uni\\wwwroot\\js\\clinic.js",
               "ToolTip": "C:\\Users\\ghiyasi\\Desktop\\beautyclinic_uni\\beautyclinic_uni\\wwwroot\\js\\clinic.js",
               "RelativeToolTip": "beautyclinic_uni\\wwwroot\\js\\clinic.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAABCAAAAAAAAAA==",
+              "ViewState": "AgIAADEAAAAAAAAAAAAQwFsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2025-12-13T09:57:19.307Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 5,
+              "Title": "doctors.css",
+              "DocumentMoniker": "C:\\Users\\ghiyasi\\Desktop\\beautyclinic_uni\\beautyclinic_uni\\wwwroot\\css\\doctors.css",
+              "RelativeDocumentMoniker": "beautyclinic_uni\\wwwroot\\css\\doctors.css",
+              "ToolTip": "C:\\Users\\ghiyasi\\Desktop\\beautyclinic_uni\\beautyclinic_uni\\wwwroot\\css\\doctors.css",
+              "RelativeToolTip": "beautyclinic_uni\\wwwroot\\css\\doctors.css",
+              "ViewState": "AgIAAJUAAAAAAAAAAAAcwMIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-12-11T18:44:59.095Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "clinic.css",
+              "DocumentMoniker": "C:\\Users\\ghiyasi\\Desktop\\beautyclinic_uni\\beautyclinic_uni\\wwwroot\\css\\clinic.css",
+              "RelativeDocumentMoniker": "beautyclinic_uni\\wwwroot\\css\\clinic.css",
+              "ToolTip": "C:\\Users\\ghiyasi\\Desktop\\beautyclinic_uni\\beautyclinic_uni\\wwwroot\\css\\clinic.css",
+              "RelativeToolTip": "beautyclinic_uni\\wwwroot\\css\\clinic.css",
+              "ViewState": "AgIAAJEAAAAAAAAAAAAowN4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-12-13T09:57:36.675Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "site.css",
+              "DocumentMoniker": "C:\\Users\\ghiyasi\\Desktop\\beautyclinic_uni\\beautyclinic_uni\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "beautyclinic_uni\\wwwroot\\css\\site.css",
+              "ToolTip": "C:\\Users\\ghiyasi\\Desktop\\beautyclinic_uni\\beautyclinic_uni\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "beautyclinic_uni\\wwwroot\\css\\site.css",
+              "ViewState": "AgIAAAsCAAAAAAAAAAAcwDMCAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-12-18T21:48:36.056Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "dashboard.js",
+              "DocumentMoniker": "C:\\Users\\ghiyasi\\Desktop\\beautyclinic_uni\\beautyclinic_uni\\wwwroot\\js\\dashboard.js",
+              "RelativeDocumentMoniker": "beautyclinic_uni\\wwwroot\\js\\dashboard.js",
+              "ToolTip": "C:\\Users\\ghiyasi\\Desktop\\beautyclinic_uni\\beautyclinic_uni\\wwwroot\\js\\dashboard.js",
+              "RelativeToolTip": "beautyclinic_uni\\wwwroot\\js\\dashboard.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-12-06T17:19:12.054Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "doctors.js",
+              "DocumentMoniker": "C:\\Users\\ghiyasi\\Desktop\\beautyclinic_uni\\beautyclinic_uni\\wwwroot\\js\\doctors.js",
+              "RelativeDocumentMoniker": "beautyclinic_uni\\wwwroot\\js\\doctors.js",
+              "ToolTip": "C:\\Users\\ghiyasi\\Desktop\\beautyclinic_uni\\beautyclinic_uni\\wwwroot\\js\\doctors.js",
+              "RelativeToolTip": "beautyclinic_uni\\wwwroot\\js\\doctors.js",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAowDsAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-12-11T18:45:51.721Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\ghiyasi\\Desktop\\beautyclinic_uni\\beautyclinic_uni\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "beautyclinic_uni\\Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\ghiyasi\\Desktop\\beautyclinic_uni\\beautyclinic_uni\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "beautyclinic_uni\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-06T19:03:06.893Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "login.cshtml",
+              "DocumentMoniker": "C:\\Users\\ghiyasi\\Desktop\\beautyclinic_uni\\beautyclinic_uni\\Views\\login\u0026signup\\login.cshtml",
+              "RelativeDocumentMoniker": "beautyclinic_uni\\Views\\login\u0026signup\\login.cshtml",
+              "ToolTip": "C:\\Users\\ghiyasi\\Desktop\\beautyclinic_uni\\beautyclinic_uni\\Views\\login\u0026signup\\login.cshtml",
+              "RelativeToolTip": "beautyclinic_uni\\Views\\login\u0026signup\\login.cshtml",
+              "ViewState": "AgIAACkAAAAAAAAAAAAswEsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-06T19:06:30.827Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\ghiyasi\\Desktop\\beautyclinic_uni\\beautyclinic_uni\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "beautyclinic_uni\\Controllers\\HomeController.cs",
@@ -225,42 +300,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-11T18:30:06.501Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "clinic.css",
-              "DocumentMoniker": "C:\\Users\\ghiyasi\\Desktop\\beautyclinic_uni\\beautyclinic_uni\\wwwroot\\css\\clinic.css",
-              "RelativeDocumentMoniker": "beautyclinic_uni\\wwwroot\\css\\clinic.css",
-              "ToolTip": "C:\\Users\\ghiyasi\\Desktop\\beautyclinic_uni\\beautyclinic_uni\\wwwroot\\css\\clinic.css",
-              "RelativeToolTip": "beautyclinic_uni\\wwwroot\\css\\clinic.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-12-13T09:57:36.675Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "doctors.css",
-              "DocumentMoniker": "C:\\Users\\ghiyasi\\Desktop\\beautyclinic_uni\\beautyclinic_uni\\wwwroot\\css\\doctors.css",
-              "RelativeDocumentMoniker": "beautyclinic_uni\\wwwroot\\css\\doctors.css",
-              "ToolTip": "C:\\Users\\ghiyasi\\Desktop\\beautyclinic_uni\\beautyclinic_uni\\wwwroot\\css\\doctors.css",
-              "RelativeToolTip": "beautyclinic_uni\\wwwroot\\css\\doctors.css",
-              "ViewState": "AgIAAIYAAAAAAAAAAAAAAKwAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-12-11T18:44:59.095Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "doctors.js",
-              "DocumentMoniker": "C:\\Users\\ghiyasi\\Desktop\\beautyclinic_uni\\beautyclinic_uni\\wwwroot\\js\\doctors.js",
-              "RelativeDocumentMoniker": "beautyclinic_uni\\wwwroot\\js\\doctors.js",
-              "ToolTip": "C:\\Users\\ghiyasi\\Desktop\\beautyclinic_uni\\beautyclinic_uni\\wwwroot\\js\\doctors.js",
-              "RelativeToolTip": "beautyclinic_uni\\wwwroot\\js\\doctors.js",
-              "ViewState": "AgIAABsAAAAAAAAAAAAEwCMAAABAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-12-11T18:45:51.721Z"
             }
           ]
         }
