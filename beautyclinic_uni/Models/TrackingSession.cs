@@ -1,12 +1,20 @@
-﻿namespace Accura.Models
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Accura.Models
 {
+    [Table("TrackingSessions")]
     public class TrackingSession
     {
+        [Key]
         public int Id { get; set; }
+
         public int Session { get; set; }
-        public string Date { get; set; }
+
+        [Required]
+        public DateTime Date { get; set; }
+
+        [MaxLength(50)]
         public string Status { get; set; }
     }
 }
-// Project: BeautyClinic_Uni
-// Author: Ali Tagipour
