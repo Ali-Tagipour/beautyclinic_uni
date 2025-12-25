@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace beautyclinic_uni.Models
@@ -9,21 +10,23 @@ namespace beautyclinic_uni.Models
         [Key]
         public int Id { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "نام و نام خانوادگی الزامی است.")]
         [MaxLength(100)]
-        public string Fullname { get; set; } = null!;
-
-        [Required]
-        [MaxLength(20)]
-        public string Phone { get; set; } = null!;
+        public string FullName { get; set; } = string.Empty;
 
         [MaxLength(150)]
-        public string? Subject { get; set; }
+        [EmailAddress(ErrorMessage = "ایمیل معتبر وارد کنید.")]
+        public string? Email { get; set; }
 
-        [Required]
-        public string Message { get; set; } = null!;
-
+        [Required(ErrorMessage = "شماره تماس الزامی است.")]
         [MaxLength(20)]
-        public string CreatedAt { get; set; } = null!;
+        public string Phone { get; set; } = string.Empty;
+
+        [Required(ErrorMessage = "پیام الزامی است.")]
+        [MaxLength(500)]
+        public string Message { get; set; } = string.Empty;
+
+        [MaxLength(50)]
+        public string CreatedAt { get; set; } = string.Empty;
     }
 }

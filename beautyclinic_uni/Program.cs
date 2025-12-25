@@ -1,6 +1,6 @@
 ﻿using beautyclinic_uni.Services;
 using Microsoft.EntityFrameworkCore;
-using beautyclinic_uni.Data; // مطمئن شو اسم پروژه درست باشه
+using beautyclinic_uni.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,12 +11,17 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddHttpClient<AiBeautyService>();
 builder.Services.AddHttpClient(); // برای سایر درخواست‌ها
 
-// Register DbContext
+// Register DbContext با Connection String درست
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// Enable Session (for login, admin panel, etc.)
-builder.Services.AddSession();
+// Enable Session برای ذخیره اطلاعات کاربر
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromHours(1); // زمان اعتبار Session
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
 
 // Build app
 var app = builder.Build();
@@ -33,8 +38,8 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-app.UseSession();         // Session فعال شد
-app.UseAuthentication();  // برای سیستم ورود آینده
+app.UseSession();         // فعال شدن Session
+app.UseAuthentication();  // برای ورود آینده
 app.UseAuthorization();
 
 // Map default controller route

@@ -39,7 +39,7 @@ namespace beautyclinic_uni.Controllers
                 RecentContactRequests = _db.ContactRequests
                     .OrderByDescending(c => c.Id)
                     .Take(5)
-                    .Select(c => new { c.Fullname, c.Phone, c.CreatedAt })
+                    .Select(c => new { c.FullName, c.Phone, c.CreatedAt })
                     .ToList()
             };
 

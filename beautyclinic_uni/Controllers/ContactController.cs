@@ -2,6 +2,7 @@
 using beautyclinic_uni.Data;
 using beautyclinic_uni.Models;
 using System;
+using System.Linq;
 
 namespace beautyclinic_uni.Controllers
 {
@@ -14,64 +15,89 @@ namespace beautyclinic_uni.Controllers
             _db = db;
         }
 
-        // نمایش فرم تماس با ما
-        [HttpGet]
-        public IActionResult Create()
-        {
-            return View();
-        }
-
-        // ثبت درخواست تماس
+        // POST: /Contact/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create(ContactRequest request)
+        public IActionResult Create(string FullName, string Phone, string Email, string Message)
         {
-            // چک ولیدیشن خودکار (Required, MaxLength و ...)
-            if (!ModelState.IsValid)
-            {
-                return View(request); // برمی‌گرداند به فرم با نمایش خطاها
-            }
-
-            // چک دستی اضافی برای فیلدهای حیاتی
-            if (string.IsNullOrWhiteSpace(request.Fullname) ||
-                string.IsNullOrWhiteSpace(request.Phone) ||
-                string.IsNullOrWhiteSpace(request.Message))
-            {
-                ModelState.AddModelError("", "لطفاً تمام فیلدهای اجباری را پر کنید.");
-                return View(request);
-            }
-
             try
             {
-                // تنظیم تاریخ ثبت
-                request.CreatedAt = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
+                if (string.IsNullOrWhiteSpace(FullName) && Request?.Form != null && Request.Form.Keys.Count > 0)
+                {
+                    FullName = Request.Form["FullName"].FirstOrDefault();
+                    Phone = Request.Form["Phone"].FirstOrDefault();
+                    Email = Request.Form["Email"].FirstOrDefault();
+                    Message = Request.Form["Message"].FirstOrDefault();
+                }
 
-                // اگر موضوع خالی بود، یک مقدار پیش‌فرض بگذار
-                request.Subject ??= "تماس از وب‌سایت";
+                if (string.IsNullOrWhiteSpace(FullName) ||
+                    string.IsNullOrWhiteSpace(Phone) ||
+                    string.IsNullOrWhiteSpace(Message))
+                {
+                    TempData["ErrorMessage"] = "لطفاً نام، شماره تماس و پیام را وارد کنید.";
+                    return Redirect($"{Url.Action("Index", "Home")}#contact");
+                }
 
-                // اضافه کردن به دیتابیس
-                _db.ContactRequests.Add(request);
-                _db.SaveChanges(); // ← اینجا واقعاً در جدول dbo.ContactRequests ذخیره می‌شه
+                var r = new ContactRequest
+                {
+                    FullName = FullName.Trim(),
+                    Phone = Phone.Trim(),
+                    Email = string.IsNullOrWhiteSpace(Email) ? null : Email.Trim(),
+                    Message = Message.Trim(),
+                    CreatedAt = DateTime.Now.ToString("yyyy-MM-dd HH:mm")
+                };
 
-                // پیام موفقیت (اختیاری: می‌تونی TempData استفاده کنی)
-                TempData["SuccessMessage"] = "پیام شما با موفقیت ارسال شد. به زودی با شما تماس می‌گیریم.";
+                _db.ContactRequests.Add(r);
+                _db.SaveChanges();
 
-                return RedirectToAction("ThankYou");
+                TempData["SuccessMessage"] = "درخواست شما ثبت شد. متشکریم.";
+                return Redirect($"{Url.Action("Index", "Home")}#contact");
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                ModelState.AddModelError("", "خطایی در ارسال پیام رخ داد. لطفاً مجدداً تلاش کنید.");
-                return View(request);
+                TempData["ErrorMessage"] = "خطا در ثبت درخواست. لطفاً دوباره تلاش کنید.";
+                TempData["ContactException"] = ex.Message;
+                return Redirect($"{Url.Action("Index", "Home")}#contact");
             }
         }
 
-        // صفحه تشکر بعد از ارسال موفق
+        // تست اتصال به DB
         [HttpGet]
-        public IActionResult ThankYou()
+        public IActionResult TestSave()
         {
-            return View();
+            try
+            {
+                var r = new ContactRequest
+                {
+                    FullName = "TEST SAVE",
+                    Phone = "09120000000",
+                    Email = "test@example.local",
+                    Message = "تست ذخیره",
+                    CreatedAt = DateTime.Now.ToString("yyyy-MM-dd HH:mm")
+                };
+                _db.ContactRequests.Add(r);
+                var rows = _db.SaveChanges();
+                return Content($"TestSave: rows affected = {rows}");
+            }
+            catch (Exception ex)
+            {
+                return Content("TestSave error: " + ex.Message);
+            }
+        }
+
+        // وضعیت تعداد رکوردها
+        [HttpGet]
+        public IActionResult Status()
+        {
+            try
+            {
+                var count = _db.ContactRequests.Count();
+                return Content($"ContactRequests rows = {count}");
+            }
+            catch (Exception ex)
+            {
+                return Content("Status error: " + ex.Message);
+            }
         }
     }
 }
-// Project: BeautyClinic_Uni
-// Author: Ali Tagipour

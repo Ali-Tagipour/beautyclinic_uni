@@ -27,40 +27,32 @@ namespace beautyclinic_uni.Controllers
 
         // ثبت درخواست تماس از طریق AJAX (فرم عمومی سایت)
         [HttpPost]
-        [ValidateAntiForgeryToken]  // امنیت بیشتر حتی در AJAX
+        [ValidateAntiForgeryToken]
         public IActionResult Submit(ContactRequest r)
         {
-            // چک نال و ولیدیشن
             if (r == null)
                 return Json(new { ok = false, msg = "اطلاعات ارسال نشده است." });
 
-            if (string.IsNullOrWhiteSpace(r.Fullname) ||
+            if (string.IsNullOrWhiteSpace(r.FullName) ||
                 string.IsNullOrWhiteSpace(r.Phone) ||
                 string.IsNullOrWhiteSpace(r.Message))
             {
                 return Json(new { ok = false, msg = "لطفاً نام، شماره تماس و پیام را وارد کنید." });
             }
 
-            // تنظیم تاریخ ثبت
-            r.CreatedAt = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
-
-            // تنظیم Subject اگر خالی بود
-            r.Subject ??= "بدون موضوع";
-
             try
             {
+                r.CreatedAt = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
+
                 _db.ContactRequests.Add(r);
-                _db.SaveChanges();  // اینجا واقعاً به دیتابیس BeautyClinicDB ذخیره می‌شه
+                _db.SaveChanges();
 
                 return Json(new { ok = true, msg = "درخواست شما با موفقیت ثبت شد. به زودی با شما تماس می‌گیریم." });
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                // اگر خطای دیتابیس بود (مثل تکراری بودن یا مشکل اتصال)
                 return Json(new { ok = false, msg = "خطا در ثبت درخواست. لطفاً مجدد تلاش کنید." });
             }
         }
     }
 }
-// Project: BeautyClinic_Uni
-// Author: Ali Tagipour

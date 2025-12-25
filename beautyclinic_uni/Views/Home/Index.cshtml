@@ -175,36 +175,47 @@
             <p class="muted section-sub">
                 فرم زیر را پر کنید تا برای هماهنگی زمان مشاوره با شما تماس بگیریم.
             </p>
+
+            <div id="contactSuccess" class="alert alert-success" style="display:none"></div>
+            <div id="contactError" class="alert alert-danger" style="display:none"></div>
+
             <div class="card glass">
-                <!-- آپدیت اصلی: فرم به Contact/Create در ContactController وصل شد -->
-                <form asp-controller="Contact" asp-action="Create" method="post">
+                <form id="contactForm"
+                      asp-controller="Contact"
+                      asp-action="Submit"
+                      method="post">
+
                     @Html.AntiForgeryToken()
+
                     <div class="field">
-                        <label for="Fullname">نام و نام خانوادگی</label>
-                        <input asp-for="Fullname" id="Fullname" name="Fullname" type="text" placeholder="مثال: نگار رضایی" required>
-                        <span asp-validation-for="Fullname" class="text-danger"></span>
+                        <label>نام و نام خانوادگی</label>
+                        <input type="text" name="FullName" required />
                     </div>
+
                     <div class="field">
-                        <label for="Phone">شماره تماس / واتساپ</label>
-                        <input asp-for="Phone" id="Phone" name="Phone" type="tel" placeholder="مثال: 0912..." required>
-                        <span asp-validation-for="Phone" class="text-danger"></span>
+                        <label>شماره تماس</label>
+                        <input type="tel" name="Phone" required />
                     </div>
+
                     <div class="field">
-                        <label for="Subject">نوع خدمت موردنیاز</label>
-                        <input asp-for="Subject" id="Subject" name="Subject" type="text" placeholder="مشاوره، شبیه‌سازی، همراهی VIP و ...">
+                        <label>ایمیل (اختیاری)</label>
+                        <input type="email" name="Email" />
                     </div>
+
                     <div class="field">
-                        <label for="Message">توضیحات تکمیلی (بازه زمانی، دغدغه‌ها و ...)</label>
-                        <textarea asp-for="Message" id="Message" name="Message" rows="4" placeholder="اگر دغدغه یا توضیح خاصی دارید اینجا بنویسید..."></textarea>
-                        <span asp-validation-for="Message" class="text-danger"></span>
+                        <label>پیام</label>
+                        <textarea name="Message" rows="4" required></textarea>
                     </div>
-                    <div class="form-actions">
-                        <button class="btn" type="submit">ارسال درخواست</button>
-                        <a class="btn ghost" href="tel:+989000000000">تماس تلفنی</a>
-                    </div>
+
+                    <button type="submit" class="btn">ارسال درخواست</button>
                 </form>
             </div>
         </section>
+
+
+
+
+
     </main>
     <footer>
         © <span id="y"></span> کلینیک زیبایی ملی مهارت • همه حقوق محفوظ است
