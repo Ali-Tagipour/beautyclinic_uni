@@ -11,10 +11,13 @@ namespace Accura.Models
 
         public int Session { get; set; }
 
+        // آپدیت شد: در دیتابیس واقعی ستون Date از نوع varchar است
+        // بنابراین باید string باشد تا با دیتابیس BeautyClinicDB سازگار شود
         [Required]
-        public DateTime Date { get; set; }
+        [MaxLength(20)]
+        public string Date { get; set; } = null!;  // مثال فرمت: "2025-12-25"
 
         [MaxLength(50)]
-        public string Status { get; set; }
+        public string? Status { get; set; }
     }
 }

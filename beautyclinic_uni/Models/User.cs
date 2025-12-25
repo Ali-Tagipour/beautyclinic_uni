@@ -9,18 +9,16 @@ namespace beautyclinic_uni.Models
         [Key]
         public int Id { get; set; }
 
-        [Required]
-        [MaxLength(100)]
-        public string Fullname { get; set; }
+        [Required, MaxLength(100)]
+        public string Fullname { get; set; } = null!;
 
         [MaxLength(150)]
-        public string Email { get; set; }
+        public string? Email { get; set; }
 
-        [Required]
-        [MaxLength(20)]
-        public string Phone { get; set; }
+        [Required, MaxLength(20)]
+        public string Phone { get; set; } = null!;
+
+        [Required, MaxLength(100)]
+        public string Password { get; set; } = null!; // اضافه شد
     }
 }
-
-// Project: BeautyClinic_Uni
-// Author: Ali Tagipour

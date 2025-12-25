@@ -10,20 +10,17 @@ namespace Accura.Models
         public int Id { get; set; }
 
         [Required, MaxLength(100)]
-        public string Name { get; set; }
+        public string PatientName { get; set; } = null!;
 
-        [Required]
-        public DateTime Date { get; set; }
-
-        [Required, MaxLength(10)]
-        public string Time { get; set; }
+        [Required, MaxLength(50)]
+        public string AppointmentDateTime { get; set; } = null!;
 
         [MaxLength(100)]
-        public string Service { get; set; }
+        public string? Service { get; set; }
 
         [MaxLength(50)]
-        public string Status { get; set; }
+        public string Status { get; set; } = "در انتظار";
 
-        public string Note { get; set; }
+        public string? Note { get; set; }
     }
 }

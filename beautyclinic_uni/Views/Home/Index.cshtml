@@ -8,7 +8,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="~/css/site.css">
 </head>
-
 <body>
     <div class="bg"></div>
     <div class="orbs" aria-hidden="true">
@@ -16,7 +15,6 @@
         <div class="orb o2"></div>
         <div class="orb o3"></div>
     </div>
-
     <!-- ناوبری -->
     <header>
         <div class="nav">
@@ -49,9 +47,7 @@
             <a href="#contact" class="btn cta-sm">رزرو سریع</a>
         </div>
     </header>
-
     <main id="home">
-
         <!-- هیرو -->
         <section class="wrap hero">
             <div class="card glass">
@@ -66,7 +62,6 @@
                     <a class="btn ghost" href="#ai-consult">مشاوره هوش مصنوعی</a>
                 </div>
             </div>
-
             <div class="hero-visual glass">
                 <div class="hero-visual img">
                     <img src="https://s34.picofile.com/file/8488244176/download.png" alt="نمونه نمای روبرو" loading="lazy">
@@ -74,7 +69,6 @@
                 <div class="badge">+1200 مشاوره موفق</div>
             </div>
         </section>
-
         <!-- خدمات -->
         <section id="services" class="wrap">
             <h2>خدمات کلینیک زیبایی ملی مهارت</h2>
@@ -99,7 +93,6 @@
                 </div>
             </div>
         </section>
-
         <!-- گالری -->
         <section id="gallery" class="wrap">
             <h2>نمونه‌های قبل و بعد (نمایشی)</h2>
@@ -124,7 +117,6 @@
                 </figure>
             </div>
         </section>
-
         <!-- FAQ -->
         <section id="faq" class="wrap">
             <h2>سؤالات متداول</h2>
@@ -143,7 +135,6 @@
                 </details>
             </div>
         </section>
-
         <!-- AI consult -->
         <section id="ai-consult" class="wrap">
             <h2>مشاوره هوش مصنوعی</h2>
@@ -159,7 +150,6 @@
                         چت‌بات فعال است؛ پیام خود را بنویسید.
                     </div>
                 </div>
-
                 <div style="
                     padding:15px;
                     background:rgba(255,255,255,0.55);
@@ -179,7 +169,6 @@
                 </div>
             </div>
         </section>
-
         <!-- Contact -->
         <section id="contact" class="wrap">
             <h2>در تماس باشید</h2>
@@ -187,26 +176,27 @@
                 فرم زیر را پر کنید تا برای هماهنگی زمان مشاوره با شما تماس بگیریم.
             </p>
             <div class="card glass">
-                <form id="contactForm">
+                <!-- آپدیت اصلی: فرم به Contact/Create در ContactController وصل شد -->
+                <form asp-controller="Contact" asp-action="Create" method="post">
+                    @Html.AntiForgeryToken()
                     <div class="field">
-                        <label for="name">نام و نام خانوادگی</label>
-                        <input id="name" name="name" type="text" placeholder="مثال: نگار رضایی" required>
+                        <label for="Fullname">نام و نام خانوادگی</label>
+                        <input asp-for="Fullname" id="Fullname" name="Fullname" type="text" placeholder="مثال: نگار رضایی" required>
+                        <span asp-validation-for="Fullname" class="text-danger"></span>
                     </div>
                     <div class="field">
-                        <label for="phone">شماره تماس / واتساپ</label>
-                        <input id="phone" name="phone" type="tel" placeholder="مثال: 0912..." required>
+                        <label for="Phone">شماره تماس / واتساپ</label>
+                        <input asp-for="Phone" id="Phone" name="Phone" type="tel" placeholder="مثال: 0912..." required>
+                        <span asp-validation-for="Phone" class="text-danger"></span>
                     </div>
                     <div class="field">
-                        <label for="service">نوع خدمت موردنیاز</label>
-                        <input id="service" name="service" type="text" placeholder="مشاوره، شبیه‌سازی، همراهی VIP و ...">
+                        <label for="Subject">نوع خدمت موردنیاز</label>
+                        <input asp-for="Subject" id="Subject" name="Subject" type="text" placeholder="مشاوره، شبیه‌سازی، همراهی VIP و ...">
                     </div>
                     <div class="field">
-                        <label for="time">بازه زمانی ترجیحی</label>
-                        <input id="time" name="time" type="text" placeholder="این هفته / هفته آینده / تاریخ مشخص">
-                    </div>
-                    <div class="field field-full">
-                        <label for="msg">توضیحات تکمیلی</label>
-                        <textarea id="msg" name="msg" rows="4" placeholder="اگر دغدغه یا توضیح خاصی دارید اینجا بنویسید..."></textarea>
+                        <label for="Message">توضیحات تکمیلی (بازه زمانی، دغدغه‌ها و ...)</label>
+                        <textarea asp-for="Message" id="Message" name="Message" rows="4" placeholder="اگر دغدغه یا توضیح خاصی دارید اینجا بنویسید..."></textarea>
+                        <span asp-validation-for="Message" class="text-danger"></span>
                     </div>
                     <div class="form-actions">
                         <button class="btn" type="submit">ارسال درخواست</button>
@@ -216,11 +206,13 @@
             </div>
         </section>
     </main>
-
     <footer>
         © <span id="y"></span> کلینیک زیبایی ملی مهارت • همه حقوق محفوظ است
     </footer>
-
     <script src="~/js/site.js"></script>
+    <!-- اسکریپت‌های لازم برای Validation سمت کلاینت (Tag Helpers) -->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
 </body>
 </html>

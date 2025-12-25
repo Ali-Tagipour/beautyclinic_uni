@@ -10,17 +10,20 @@ namespace Accura.Models
         public int Id { get; set; }
 
         [Required]
-        public DateTime Date { get; set; }
+        [MaxLength(20)]
+        public string Date { get; set; } = null!;
 
         [Required, MaxLength(100)]
-        public string PatientName { get; set; }
+        public string PatientName { get; set; } = null!;
 
         [MaxLength(100)]
-        public string Service { get; set; }
+        public string? Service { get; set; }
 
         [MaxLength(100)]
-        public string Doctor { get; set; }
+        public string? Doctor { get; set; }
 
-        public long Amount { get; set; }
+        // تغییر از long به decimal → سازگار با دیتابیس واقعی
+        [Column(TypeName = "decimal(18,2)")]  // یا money در دیتابیس
+        public decimal Amount { get; set; }
     }
 }
