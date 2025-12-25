@@ -1,6 +1,5 @@
 ﻿using Accura.Models;
 using beautyclinic_uni.Data;
-using beautyclinic_uni.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 
@@ -8,38 +7,71 @@ namespace beautyclinic_uni.Controllers
 {
     public class AppointmentController : Controller
     {
-        private readonly ApplicationDbContext db;
-        public AppointmentController(ApplicationDbContext c) { db = c; }
+        private readonly ApplicationDbContext _db;
 
-        public IActionResult Index() => View(db.Appointments.ToList());
+        public AppointmentController(ApplicationDbContext db)
+        {
+            _db = db;
+        }
 
+        // نمایش لیست نوبت‌ها
+        public IActionResult Index()
+        {
+            var list = _db.Appointments
+                          .OrderByDescending(a => a.Id)
+                          .ToList();
+
+            return View(list);
+        }
+
+        // افزودن نوبت جدید
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult Add(Appointment ap)
         {
-            db.Appointments.Add(ap);
-            db.SaveChanges();
+            if (!ModelState.IsValid)
+                return RedirectToAction("Index");
+
+            if (ap == null)
+                return RedirectToAction("Index");
+
+            // مقداردهی امن
+            ap.Status ??= "در انتظار";
+
+            _db.Appointments.Add(ap);
+            _db.SaveChanges();
+
             return RedirectToAction("Index");
         }
 
+        // تغییر وضعیت نوبت
+        [HttpPost]
         public IActionResult ChangeStatus(int id, string status)
         {
-            var ap = db.Appointments.Find(id);
-            if (ap != null)
-            {
-                ap.Status = status;
-                db.SaveChanges();
-            }
+            if (string.IsNullOrWhiteSpace(status))
+                return RedirectToAction("Index");
+
+            var ap = _db.Appointments.FirstOrDefault(a => a.Id == id);
+            if (ap == null)
+                return RedirectToAction("Index");
+
+            ap.Status = status;
+            _db.SaveChanges();
+
             return RedirectToAction("Index");
         }
 
+        // حذف نوبت
+        [HttpPost]
         public IActionResult Delete(int id)
         {
-            var ap = db.Appointments.Find(id);
-            if (ap != null)
-            {
-                db.Appointments.Remove(ap);
-                db.SaveChanges();
-            }
+            var ap = _db.Appointments.FirstOrDefault(a => a.Id == id);
+            if (ap == null)
+                return RedirectToAction("Index");
+
+            _db.Appointments.Remove(ap);
+            _db.SaveChanges();
+
             return RedirectToAction("Index");
         }
     }
