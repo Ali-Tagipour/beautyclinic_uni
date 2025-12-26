@@ -30,3 +30,13 @@ namespace beautyclinic_uni.Models
         public string CreatedAt { get; set; } = string.Empty;
     }
 }
+
+
+// Project: BeautyClinic_Uni
+// Developer: Ali Tagipour
+
+// Project: BeautyClinic_Uni
+// Developer: Ali Tagipour
+
+// Project: BeautyClinic_Uni
+// Developer: Ali Tagipour

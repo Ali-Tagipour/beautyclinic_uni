@@ -22,3 +22,13 @@ namespace beautyclinic_uni.Models
         public string Password { get; set; } = null!; // اضافه شد
     }
 }
+
+
+// Project: BeautyClinic_Uni
+// Developer: Ali Tagipour
+
+// Project: BeautyClinic_Uni
+// Developer: Ali Tagipour
+
+// Project: BeautyClinic_Uni
+// Developer: Ali Tagipour

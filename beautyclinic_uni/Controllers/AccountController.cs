@@ -70,6 +70,8 @@ namespace beautyclinic_uni.Controllers
             // ✅ بعد از لاگین → داشبورد
             return RedirectToAction("Index", "Dashboard");
         }
+        // Project: BeautyClinic_Uni
+        // Author: Ali Tagipour
 
         // ======================
         // GET: Signup
@@ -79,6 +81,10 @@ namespace beautyclinic_uni.Controllers
         {
             return View("~/Views/login&signup/signup.cshtml");
         }
+
+        // Project: BeautyClinic_Uni
+        // Developer: Ali Tagipour
+
 
         // ======================
         // POST: Signup
@@ -120,3 +126,16 @@ namespace beautyclinic_uni.Controllers
         }
     }
 }
+// Project: BeautyClinic_Uni
+// Developer: Ali Tagipour
+
+// Project: BeautyClinic_Uni
+// Developer: Ali Tagipour
+
+// Project: BeautyClinic_Uni
+// Developer: Ali Tagipour
+
+// Project: BeautyClinic_Uni
+// Developer: Ali Tagipour
+
+

@@ -9,6 +9,8 @@ namespace Accura.Models
         [Key]
         public int Id { get; set; }
 
+        // اگر دیتابیس فعلیت تاریخ را رشته ذخیره می‌کند، این نگه داشته می‌شود.
+        // در آینده بهتر است به DateTime تغییر داده و Migration بگیری.
         [Required]
         [MaxLength(20)]
         public string Date { get; set; } = null!;
@@ -22,8 +24,8 @@ namespace Accura.Models
         [MaxLength(100)]
         public string? Doctor { get; set; }
 
-        // تغییر از long به decimal → سازگار با دیتابیس واقعی
-        [Column(TypeName = "decimal(18,2)")]  // یا money در دیتابیس
+        // استفاده از decimal برای مقادیر پولی
+        [Column(TypeName = "decimal(18,2)")]
         public decimal Amount { get; set; }
     }
 }

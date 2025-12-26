@@ -17,3 +17,9 @@ namespace Accura.Models
         public int Price { get; set; }
     }
 }
+
+// Project: BeautyClinic_Uni
+// Developer: Ali Tagipour
+
+// Project: BeautyClinic_Uni
+// Developer: Ali Tagipour

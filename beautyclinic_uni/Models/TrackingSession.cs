@@ -21,3 +21,9 @@ namespace Accura.Models
         public string? Status { get; set; }
     }
 }
+
+// Project: BeautyClinic_Uni
+// Developer: Ali Tagipour
+
+// Project: BeautyClinic_Uni
+// Developer: Ali Tagipour

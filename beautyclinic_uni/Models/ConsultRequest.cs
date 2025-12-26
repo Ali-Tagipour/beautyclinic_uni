@@ -24,3 +24,13 @@ namespace beautyclinic_uni.Models
         public DateTime CreatedAt { get; set; } = DateTime.Now;
     }
 }
+
+
+// Project: BeautyClinic_Uni
+// Developer: Ali Tagipour
+
+// Project: BeautyClinic_Uni
+// Developer: Ali Tagipour
+
+// Project: BeautyClinic_Uni
+// Developer: Ali Tagipour

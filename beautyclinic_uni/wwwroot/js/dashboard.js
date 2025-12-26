@@ -1,4 +1,7 @@
-﻿const doctors = [
+﻿// =========================
+// Doctors Data
+// =========================
+const doctors = [
     {
         name: "دکتر سارا محمدی",
         degree: "متخصص پوست و مو - دانشگاه تهران",
@@ -36,10 +39,17 @@
     }
 ];
 
-const container = document.getElementById("doctorsContainer");
-
+// =========================
+// Render Function (بهینه و امن)
+// =========================
 function renderDoctors(list) {
-    container.innerHTML = "";
+    const container = document.getElementById("doctorsContainer");
+    if (!container) {
+        console.warn("doctorsContainer not found in this page.");
+        return;
+    }
+
+    container.innerHTML = ""; // پاک کردن قبلی
 
     list.forEach(d => {
         const card = document.createElement("div");
@@ -47,34 +57,44 @@ function renderDoctors(list) {
 
         card.innerHTML = `
             <div class="doctor-info">
-                <h2>${d.name}</h2>
-                <p><strong>مدرک:</strong> ${d.degree}</p>
-                <p><strong>تجربه:</strong> ${d.experience}</p>
-                <p><strong>تخصص:</strong> ${d.specialty}</p>
+                <h2>${d.name || "نامشخص"}</h2>
+                <p><strong>مدرک:</strong> ${d.degree || "—"}</p>
+                <p><strong>تجربه:</strong> ${d.experience || "—"}</p>
+                <p><strong>تخصص:</strong> ${d.specialty || "—"}</p>
             </div>
-            <img src="${d.image}" alt="${d.name}">
+            <img src="${d.image || ''}" alt="${d.name || 'پزشک'}" onerror="this.src='https://via.placeholder.com/150?text=تصویر+ندارد';">
         `;
 
         container.appendChild(card);
     });
 }
 
-function filterDoctors(keyword, btn) {
-    document.querySelectorAll(".service-btn")
-        .forEach(b => b.classList.remove("active"));
+// =========================
+// Filter Function (اگر دکمه داشتی کار می‌کنه)
+// =========================
+function filterDoctors(keyword = "همه", btn = null) {
+    const container = document.getElementById("doctorsContainer");
+    if (!container) return;
 
-    btn.classList.add("active");
+    // حذف active از همه دکمه‌ها
+    document.querySelectorAll(".service-btn").forEach(b => b.classList.remove("active"));
 
+    // اضافه کردن active به دکمه کلیک‌شده
+    if (btn) btn.classList.add("active");
+
+    let filtered;
     if (keyword === "همه") {
-        renderDoctors(doctors);
-        return;
+        filtered = doctors;
+    } else {
+        filtered = doctors.filter(d => d.specialty.includes(keyword));
     }
-
-    const filtered = doctors.filter(d =>
-        d.specialty.includes(keyword)
-    );
 
     renderDoctors(filtered);
 }
 
-renderDoctors(doctors);
+// =========================
+// اجرا اولیه
+// =========================
+document.addEventListener("DOMContentLoaded", () => {
+    renderDoctors(doctors);
+});

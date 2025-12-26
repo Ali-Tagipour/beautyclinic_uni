@@ -1,12 +1,12 @@
 ﻿using Accura.Models;
 using beautyclinic_uni.Data;
-using Microsoft.AspNetCore.Authorization; // اضافه شد برای امنیت
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 
 namespace beautyclinic_uni.Controllers
 {
-    [Authorize] // فقط کاربران لاگین‌شده (ادمین) می‌توانند به مدیریت بیماران دسترسی داشته باشند
+    [Authorize] // در صورت نیاز می‌توان نقش‌ها را مشخص کرد: [Authorize(Roles = "Admin,Doctor")]
     public class PatientController : Controller
     {
         private readonly ApplicationDbContext _db;
@@ -32,13 +32,16 @@ namespace beautyclinic_uni.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return View("Index", _db.Patients.ToList());
+                TempData["ErrorMessage"] = "اطلاعات نامعتبر است.";
+                return RedirectToAction("Index");
             }
 
             if (p == null)
             {
                 return RedirectToAction("Index");
             }
+
+            p.Status ??= "در انتظار";
 
             _db.Patients.Add(p);
             _db.SaveChanges();
@@ -73,7 +76,8 @@ namespace beautyclinic_uni.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return View("Index", _db.Patients.ToList());
+                TempData["ErrorMessage"] = "اطلاعات نامعتبر است.";
+                return RedirectToAction("Index");
             }
 
             if (p == null || p.Id <= 0)
@@ -89,7 +93,6 @@ namespace beautyclinic_uni.Controllers
                 return RedirectToAction("Index");
             }
 
-            // به‌روزرسانی فیلدها
             existingPatient.Name = p.Name;
             existingPatient.Age = p.Age;
             existingPatient.Service = p.Service;
@@ -104,5 +107,12 @@ namespace beautyclinic_uni.Controllers
         }
     }
 }
+
 // Project: BeautyClinic_Uni
-// Author: Ali Tagipour
+// Developer: Ali Tagipour
+
+// Project: BeautyClinic_Uni
+// Developer: Ali Tagipour
+
+// Project: BeautyClinic_Uni
+// Developer: Ali Tagipour

@@ -9,3 +9,9 @@ namespace beautyclinic_uni.Models
 }
 // Project: BeautyClinic_Uni
 // Author: Ali Tagipour
+
+// Project: BeautyClinic_Uni
+// Developer: Ali Tagipour
+
+// Project: BeautyClinic_Uni
+// Developer: Ali Tagipour

@@ -18,3 +18,13 @@ namespace Accura.Models
         public DateTime Date { get; set; } = DateTime.Now;
     }
 }
+
+
+// Project: BeautyClinic_Uni
+// Developer: Ali Tagipour
+
+// Project: BeautyClinic_Uni
+// Developer: Ali Tagipour
+
+// Project: BeautyClinic_Uni
+// Developer: Ali Tagipour

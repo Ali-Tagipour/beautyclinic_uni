@@ -16,3 +16,13 @@ namespace beautyclinic_uni.Models
         public ContactRequest ContactForm { get; set; } = new ContactRequest();
     }
 }
+
+
+// Project: BeautyClinic_Uni
+// Developer: Ali Tagipour
+
+// Project: BeautyClinic_Uni
+// Developer: Ali Tagipour
+
+// Project: BeautyClinic_Uni
+// Developer: Ali Tagipour

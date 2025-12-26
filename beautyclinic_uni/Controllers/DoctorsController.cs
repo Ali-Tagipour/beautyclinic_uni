@@ -1,9 +1,14 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-public class DoctorsController : Controller // Author: ehsanghiyasi
+namespace beautyclinic_uni.Controllers
 {
-    public IActionResult Index() // Author: ehsanghiyasi
+    // صفحه‌ی لیست پزشکان (عمومی - نیازی به Authorize نیست مگر بخواهی)
+    public class DoctorsController : Controller
     {
-        return View("~/Views/doctors/doctors.cshtml");// Author: ehsanghiyasi
+        // بازگرداندن View استاندارد در مسیر Views/Doctors/Index.cshtml
+        public IActionResult Index()
+        {
+            return View("Index"); // MVC به صورت پیش‌فرض دنبال Views/Doctors/Index.cshtml می‌گردد
+        }
     }
 }
