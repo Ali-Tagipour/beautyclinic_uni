@@ -2,7 +2,9 @@
 using beautyclinic_uni.Data;
 using beautyclinic_uni.Models;
 using System.Linq;
-using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using System.Security.Claims;
 
 namespace beautyclinic_uni.Controllers
 {
@@ -15,17 +17,21 @@ namespace beautyclinic_uni.Controllers
             _context = context;
         }
 
+        // ======================
         // GET: Login
+        // ======================
         [HttpGet]
         public IActionResult Login()
         {
             return View("~/Views/login&signup/login.cshtml");
         }
 
-        // POST: Login - شماره تلفن + Password
+        // ======================
+        // POST: Login
+        // ======================
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Login(string phone, string password)
+        public async Task<IActionResult> Login(string phone, string password)
         {
             if (string.IsNullOrWhiteSpace(phone) || string.IsNullOrWhiteSpace(password))
             {
@@ -33,40 +39,57 @@ namespace beautyclinic_uni.Controllers
                 return View("~/Views/login&signup/login.cshtml");
             }
 
-            var user = _context.Users
-                .FirstOrDefault(u => u.Phone == phone && u.Password == password);
+            var user = _context.Users.FirstOrDefault(u => u.Phone == phone);
 
-            if (user == null)
+            if (user == null || user.Password != password)
             {
                 ViewBag.Error = "شماره تلفن یا رمز عبور اشتباه است.";
                 return View("~/Views/login&signup/login.cshtml");
             }
 
-            // لاگین موفق
-            HttpContext.Session.SetInt32("UserId", user.Id);
-            HttpContext.Session.SetString("UserName", user.Fullname ?? "کاربر");
+            // ===== ساخت Cookie Auth =====
+            var claims = new List<Claim>
+            {
+                new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
+                new Claim(ClaimTypes.Name, user.Fullname ?? "کاربر"),
+                new Claim(ClaimTypes.MobilePhone, user.Phone ?? "")
+            };
 
-            return RedirectToAction("Index", "Home");
+            var identity = new ClaimsIdentity(
+                claims,
+                CookieAuthenticationDefaults.AuthenticationScheme
+            );
+
+            var principal = new ClaimsPrincipal(identity);
+
+            await HttpContext.SignInAsync(
+                CookieAuthenticationDefaults.AuthenticationScheme,
+                principal
+            );
+
+            // ✅ بعد از لاگین → داشبورد
+            return RedirectToAction("Index", "Dashboard");
         }
 
+        // ======================
         // GET: Signup
+        // ======================
         [HttpGet]
         public IActionResult Signup()
         {
             return View("~/Views/login&signup/signup.cshtml");
         }
 
-        // POST: Signup - شامل Password
+        // ======================
+        // POST: Signup
+        // ======================
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Signup(User model)
         {
             if (!ModelState.IsValid)
-            {
                 return View("~/Views/login&signup/signup.cshtml", model);
-            }
 
-            // چک تکراری بودن شماره تلفن یا ایمیل
             bool exists = _context.Users.Any(u =>
                 u.Phone == model.Phone ||
                 (!string.IsNullOrEmpty(u.Email) && u.Email == model.Email));
@@ -80,15 +103,19 @@ namespace beautyclinic_uni.Controllers
             _context.Users.Add(model);
             _context.SaveChanges();
 
-            TempData["SuccessMessage"] = "حساب شما با موفقیت ساخته شد. حالا می‌توانید وارد شوید.";
-
+            TempData["SuccessMessage"] = "ثبت‌نام با موفقیت انجام شد. لطفاً وارد شوید.";
             return RedirectToAction("Login");
         }
 
+        // ======================
         // Logout
-        public IActionResult Logout()
+        // ======================
+        public async Task<IActionResult> Logout()
         {
-            HttpContext.Session.Clear();
+            await HttpContext.SignOutAsync(
+                CookieAuthenticationDefaults.AuthenticationScheme
+            );
+
             return RedirectToAction("Login");
         }
     }

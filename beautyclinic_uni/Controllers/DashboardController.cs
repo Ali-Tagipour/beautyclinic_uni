@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using beautyclinic_uni.Data;
+using beautyclinic_uni.ViewModels;
 using System;
 using System.Linq;
 
@@ -20,32 +21,41 @@ namespace beautyclinic_uni.Controllers
         {
             var todayString = DateTime.Today.ToString("yyyy-MM-dd");
 
-            var dashboardViewModel = new
+            var model = new DashboardViewModel
             {
                 TotalPatients = _db.Patients.Count(),
+
                 TotalAppointments = _db.Appointments.Count(),
-                TotalPayments = _db.Payments.Sum(x => x.Amount),
+
+                TotalPayments = _db.Payments.Any()
+                    ? _db.Payments.Sum(x => x.Amount)
+                    : 0,
+
                 TotalServices = _db.Services.Count(),
 
-                // نوبت‌های در انتظار
                 PendingAppointments = _db.Appointments
                     .Count(a => a.Status == "در انتظار" || a.Status == "Pending"),
 
-                // نوبت‌های امروز - با فیلد جدید AppointmentDateTime
                 TodayAppointments = _db.Appointments
-                    .Count(a => a.AppointmentDateTime != null && a.AppointmentDateTime.Contains(todayString)),
+                    .Count(a =>
+                        !string.IsNullOrEmpty(a.AppointmentDateTime) &&
+                        a.AppointmentDateTime.Contains(todayString)
+                    ),
 
-                // درخواست‌های تماس اخیر
                 RecentContactRequests = _db.ContactRequests
                     .OrderByDescending(c => c.Id)
                     .Take(5)
-                    .Select(c => new { c.FullName, c.Phone, c.CreatedAt })
+                    .Select(c => new ContactRequestItem
+                    {
+                        FullName = c.FullName,
+                        Phone = c.Phone,
+                        CreatedAt = c.CreatedAt
+                    })
                     .ToList()
             };
 
-            return View(dashboardViewModel);
+            // 🔴 مسیر View به‌صورت صریح (حل قطعی خطا)
+            return View("~/Views/dashboard/dashboard.cshtml", model);
         }
     }
 }
-// Project: BeautyClinic_Uni
-// Author: Ali Tagipour

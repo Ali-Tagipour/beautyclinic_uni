@@ -12,7 +12,9 @@ namespace Accura.Models
         [Required, MaxLength(100)]
         public string PatientName { get; set; } = null!;
 
+        
         [Required, MaxLength(50)]
+        [Column("AppointmentDate")]
         public string AppointmentDateTime { get; set; } = null!;
 
         [MaxLength(100)]
